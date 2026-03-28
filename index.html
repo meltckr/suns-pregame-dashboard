@@ -19,9 +19,9 @@
   --surface-3: #222233;
   --border: #2a2a3a;
   --border-hover: #3a3a52;
-  --text: #e8e8f0;
-  --text-muted: #8888a0;
-  --text-dim: #5c5c74;
+  --text: #f0f0f8;
+  --text-muted: #b0b0c8;
+  --text-dim: #8a8aa8;
   --accent: #e8601e;
   --accent-glow: rgba(232, 96, 30, 0.15);
   --suns-purple: #1d1160;
@@ -193,7 +193,15 @@ body {
 .accordion-body {
   display: none;
   padding: 0 14px 14px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
 }
+.accordion-body p {
+  margin-bottom: 12px;
+  color: #d0d0e0;
+}
+.accordion-body p:last-child { margin-bottom: 0; }
 
 .accordion-item.open .accordion-body { display: block; }
 
@@ -210,8 +218,8 @@ body {
 }
 
 .section-note {
-  font-size: 10px;
-  color: var(--text-dim);
+  font-size: 11px;
+  color: var(--text-muted);
   margin-top: 10px;
   padding-top: 8px;
   border-top: 1px solid rgba(255,255,255,0.04);
@@ -246,15 +254,15 @@ body {
   flex-shrink: 0;
 }
 .league-bullet-game {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   color: #fff;
   display: block;
 }
 .league-bullet-note {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.6;
   margin-top: 2px;
   display: block;
 }
@@ -269,7 +277,7 @@ body {
 }
 .injury-row:last-child { border-bottom: none; }
 .injury-name { font-size: 12px; font-weight: 700; color: #fff; flex: 1; }
-.injury-reason { font-size: 11px; color: var(--text-muted); }
+.injury-reason { font-size: 12px; color: var(--text-muted); }
 
 .injury-badge {
   font-size: 9px;
@@ -300,7 +308,7 @@ body {
 .player-name { font-size: 13px; font-weight: 700; color: #fff; }
 .player-role { font-size: 10px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 .player-stats { font-size: 12px; color: var(--suns-orange); font-weight: 600; margin-bottom: 4px; }
-.player-note { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+.player-note { font-size: 12px; color: var(--text-muted); line-height: 1.55; }
 
 /* TEAM COMPARISON */
 .stat-compare-row {
@@ -417,7 +425,7 @@ body {
 .hustle-rank.mid { background: rgba(245,158,11,0.1); color: var(--gold); }
 .hustle-rank.bottom10 { background: rgba(239,68,68,0.1); color: var(--loss); }
 .hustle-insight {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
   line-height: 1.6;
   background: var(--surface-3);
@@ -548,7 +556,7 @@ body {
   flex-shrink: 0;
 }
 .storyline-text {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   line-height: 1.6;
 }
@@ -570,7 +578,7 @@ body {
   padding-top: 1px;
 }
 .watch-text {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   line-height: 1.6;
 }
@@ -658,7 +666,7 @@ body {
         </div>
         <div class="score-divider">VS</div>
         <div class="team-side">
-          <div class="team-abbr" style="color:rgba(255,255,255,0.45)">UTA</div>
+          <div class="team-abbr" style="color:rgba(255,255,255,0.7)">UTA</div>
           <div class="team-record">21-53 · 14th West</div>
         </div>
       </div>
