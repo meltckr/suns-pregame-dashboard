@@ -42,12 +42,86 @@
 body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-bg); color: var(--text-primary); min-height: 100vh; padding-bottom: 80px; -webkit-text-size-adjust: 100%; }
 
 /* ===================== HEADER ===================== */
-.header { background: linear-gradient(135deg, var(--phx-purple) 0%, #0a1628 100%); border-bottom: 2px solid var(--phx-orange); padding: 18px 20px 14px; text-align: center; position: sticky; top: 0; z-index: 100; cursor: pointer; }
-.header-eyebrow { font-size: 10px; letter-spacing: 3px; color: var(--phx-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
-.header-title { font-size: 22px; font-weight: 900; color: var(--text-primary); letter-spacing: -0.5px; }
-.header-title span { color: var(--phx-orange); }
-.header-sub { font-size: 11px; color: var(--text-secondary); margin-top: 5px; }
-.avc-badge { display: inline-block; background: var(--phx-orange); color: #fff; font-size: 9px; font-weight: 800; letter-spacing: 1.5px; padding: 3px 8px; border-radius: 20px; margin-top: 8px; text-transform: uppercase; }
+.header {
+  background: linear-gradient(160deg, #1d1160 0%, #0a0a0f 60%);
+  border-bottom: 1px solid var(--card-border);
+  padding: 16px 16px 0;
+  cursor: pointer;
+}
+.brand-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.brand-logo { display: flex; align-items: center; }
+.brand-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.matchup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0 18px;
+}
+.team-block { flex: 1; text-align: center; }
+.team-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+.team-abbr-hdr {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1;
+  margin-top: 4px;
+}
+.team-abbr-hdr.phx { color: #ffffff; }
+.team-abbr-hdr.opp { color: var(--text-secondary); }
+.team-rec {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+.hdr-divider {
+  text-align: center;
+  flex-shrink: 0;
+  padding: 0 12px;
+}
+.hdr-divider .badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 3px 12px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  background: rgba(232, 96, 30, 0.15);
+  border: 1px solid rgba(232, 96, 30, 0.3);
+  color: var(--phx-orange);
+}
+.hdr-divider .vs-text {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  letter-spacing: 1px;
+}
+.game-meta {
+  text-align: center;
+  padding: 0 0 14px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
 
 /* ===================== GAME INFO BAR ===================== */
 .score-bar { display: flex; align-items: center; justify-content: center; padding: 18px 20px; background: var(--card-bg); border-bottom: 1px solid var(--card-border); }
@@ -250,11 +324,41 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
 .tag.chi { background: rgba(206,17,65,0.1); border-color: rgba(206,17,65,0.3); color: var(--chi-red); }
 
 /* ===================== FOOTER ===================== */
-.footer { background: var(--phx-purple); border-top: 2px solid var(--phx-orange); text-align: center; padding: 16px 20px 20px; margin-top: 24px; }
-.footer-dominate { font-size: 20px; font-weight: 900; color: var(--phx-orange); letter-spacing: 4px; }
-.footer-goodluck { font-size: 13px; color: var(--text-secondary); margin-top: 6px; font-style: italic; }
-.footer-avc { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--text-muted); margin-top: 6px; text-transform: uppercase; }
-.footer-timestamp { font-size: 10px; color: var(--text-muted); margin-top: 4px; }
+.footer {
+  padding: 28px 16px 20px;
+  text-align: center;
+  border-top: 1px solid var(--card-border);
+  margin-top: 8px;
+}
+.footer-dominate {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, var(--phx-orange), var(--accent-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+}
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+.footer-goodluck {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--phx-orange);
+  margin-top: 8px;
+  letter-spacing: 0.3px;
+}
+.footer-timestamp {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 6px;
+}
 
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 480px) {
@@ -271,45 +375,46 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
 <body>
 
 <!-- ===================== HEADER ===================== -->
-<header class="header" id="main-header" onclick="scrollTo({top:0,behavior:'smooth'})">
-  <div class="header-eyebrow">🏀 Ownership Intelligence</div>
-  <div class="header-title">Phoenix <span>Suns</span> Pregame</div>
-  <div class="header-sub">Sunday, April 5, 2026 &nbsp;•&nbsp; United Center · Chicago, IL</div>
-  <div class="avc-badge">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 64" width="170" height="32" style="display:block;margin:8px auto 0;">
-      <circle cx="32" cy="32" r="30" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.2"/>
-      <circle cx="32" cy="32" r="22" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.45"/>
-      <circle cx="32" cy="32" r="14" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.85"/>
-      <line x1="22" y1="32" x2="43" y2="32" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
-      <polyline points="37,26 43,32 37,38" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <line x1="78" y1="12" x2="78" y2="52" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/>
-      <text x="94" y="38" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="28" fill="#ffffff" letter-spacing="-0.5">AVC</text>
-      <text x="94" y="53" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="7.8" fill="rgba(255,255,255,0.55)" letter-spacing="2.4">ACCELERATED VELOCITY CONSULTING</text>
-    </svg>
+<div class="header" id="main-header">
+  <div class="brand-bar">
+    <div class="brand-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 64" width="170" height="32">
+        <circle cx="32" cy="32" r="30" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.2"/>
+        <circle cx="32" cy="32" r="22" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.45"/>
+        <circle cx="32" cy="32" r="14" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.85"/>
+        <line x1="22" y1="32" x2="43" y2="32" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+        <polyline points="37,26 43,32 37,38" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <line x1="78" y1="12" x2="78" y2="52" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/>
+        <text x="94" y="38" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="28" fill="#ffffff" letter-spacing="-0.5">AVC</text>
+        <text x="94" y="53" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="7.8" fill="rgba(255,255,255,0.55)" letter-spacing="2.4">ACCELERATED VELOCITY CONSULTING</text>
+      </svg>
+    </div>
+    <span class="brand-tag">Ownership Intelligence</span>
   </div>
-</header>
 
-<!-- ===================== GAME INFO BAR ===================== -->
-<div class="score-bar">
-  <div class="team-score-block">
-    <div class="team-name">Phoenix</div>
-    <div class="team-abbr phx-color">PHX</div>
-    <div class="record">42-35 · 7th West</div>
-    <div class="pregame-badge">PREGAME INTEL</div>
+  <div class="matchup">
+    <div class="team-block">
+      <div class="team-label">Phoenix</div>
+      <div class="team-abbr-hdr phx">PHX</div>
+      <div class="team-rec">42-35 · 7th West</div>
+    </div>
+    <div class="hdr-divider">
+      <div class="badge">PREGAME INTEL</div>
+      <div class="vs-text">3:30 PM ET</div>
+    </div>
+    <div class="team-block">
+      <div class="team-label">Chicago</div>
+      <div class="team-abbr-hdr opp">CHI</div>
+      <div class="team-rec">29-48 · 12th East</div>
+    </div>
   </div>
-  <div class="score-divider">
-    <div class="at">@</div>
-    <span class="tipoff">3:30 PM ET</span>
-  </div>
-  <div class="team-score-block">
-    <div class="team-name">Chicago</div>
-    <div class="team-abbr chi-color">CHI</div>
-    <div class="record">29-48 · 12th East</div>
-    <div style="font-size:10px; color:var(--text-muted); margin-top:4px;">UNDERDOG</div>
+
+  <div class="game-meta">
+    United Center — Chicago, IL<br>
+    CHSN · AZFamily · Suns+
   </div>
 </div>
 <div class="info-chips">
-  <span class="info-chip">CHSN · AZFamily · Suns+</span>
   <span class="info-chip orange">PHX -10.5</span>
   <span class="info-chip">O/U 238.5</span>
   <span class="info-chip red">CHI 6-GAME SKID</span>
