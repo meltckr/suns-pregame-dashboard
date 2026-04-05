@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
 <meta name="theme-color" content="#1a1a2e">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>PHX @ CHA — Pregame Intelligence | Apr 2</title>
-<meta name="description" content="Booker & Brooks vs NBA's #1 3PT team. Suns 3rd game in 4 nights, 5.5-pt underdogs. Williams may return. Full injury report, matchup data & ownership intel.">
+<title>PHX @ CHI — Pregame Intelligence | Apr 5</title>
+<meta name="description" content="Suns wrap road trip as 10.5-pt favorites vs tanking Bulls on 6-game skid. Brooks & Williams back healthy. Booker 25.7 PPG. Giddey (hamstring) & Buzelis (illness) questionable. Full ownership brief.">
 
 <!-- OG + Twitter Card Meta Tags -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="PHX @ CHA — Pregame Intelligence | Apr 2">
-<meta property="og:description" content="Booker & Brooks vs NBA's #1 3PT team. Suns 3rd game in 4 nights, 5.5-pt underdogs. Williams may return. Full injury report, matchup data & ownership intel.">
+<meta property="og:title" content="PHX @ CHI — Pregame Intelligence | Apr 5">
+<meta property="og:description" content="Suns wrap road trip as 10.5-pt favorites vs tanking Bulls on 6-game skid. Brooks & Williams back healthy. Booker 25.7 PPG. Giddey (hamstring) & Buzelis (illness) questionable. Full ownership brief.">
 <meta property="og:image" content="https://meltckr.github.io/suns-pregame-dashboard/og-image.jpg">
 <meta property="og:url" content="https://meltckr.github.io/suns-pregame-dashboard">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PHX @ CHA — Pregame Intelligence | Apr 2">
-<meta name="twitter:description" content="Booker & Brooks vs NBA's #1 3PT team. Suns 3rd game in 4 nights, 5.5-pt underdogs. Williams may return. Full injury report, matchup data & ownership intel.">
+<meta name="twitter:title" content="PHX @ CHI — Pregame Intelligence | Apr 5">
+<meta name="twitter:description" content="Suns wrap road trip as 10.5-pt favorites vs tanking Bulls on 6-game skid. Brooks & Williams back healthy. Booker 25.7 PPG. Giddey (hamstring) & Buzelis (illness) questionable. Full ownership brief.">
 <meta name="twitter:image" content="https://meltckr.github.io/suns-pregame-dashboard/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
   --accent-blue: #60a5fa;
   --accent-yellow: #fbbf24;
   --accent-teal: #2dd4bf;
-  --cha-teal: #00788c;
+  --chi-red: #ce1141;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-bg); color: var(--text-primary); min-height: 100vh; padding-bottom: 80px; -webkit-text-size-adjust: 100%; }
@@ -55,7 +55,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
 .team-name { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--text-secondary); text-transform: uppercase; }
 .team-abbr { font-size: 28px; font-weight: 900; color: var(--text-primary); line-height: 1; margin-top: 4px; }
 .team-abbr.phx-color { color: var(--phx-orange); }
-.team-abbr.cha-color { color: var(--accent-teal); }
+.team-abbr.chi-color { color: var(--chi-red); }
 .record { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
 .pregame-badge { display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; padding: 3px 10px; border-radius: 12px; margin-top: 4px; text-transform: uppercase; background: rgba(233,106,31,0.18); color: var(--phx-orange); border: 1px solid rgba(233,106,31,0.45); }
 .score-divider { padding: 0 14px; text-align: center; align-self: flex-end; margin-bottom: 4px; }
@@ -107,6 +107,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
 .status-q { background: rgba(251,191,36,0.18); color: var(--accent-yellow); border: 1px solid rgba(251,191,36,0.35); }
 .status-prob { background: rgba(74,222,128,0.15); color: var(--accent-green); border: 1px solid rgba(74,222,128,0.35); }
 .status-avail { background: rgba(233,106,31,0.15); color: var(--phx-orange); border: 1px solid rgba(233,106,31,0.35); }
+.status-dtd { background: rgba(251,191,36,0.18); color: var(--accent-yellow); border: 1px solid rgba(251,191,36,0.35); }
 
 /* ===================== PLAYER CARDS ===================== */
 .player-card { background: rgba(255,255,255,0.025); border: 1px solid var(--card-border); border-radius: 10px; padding: 11px 13px; margin-bottom: 8px; }
@@ -121,8 +122,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
 .player-note { font-size: 11.5px; color: var(--text-secondary); line-height: 1.4; font-style: italic; }
 .player-note strong { color: var(--phx-orange); font-style: normal; }
 .player-note strong.opp { color: var(--accent-teal); }
-.player-card.cha-card { border-color: rgba(45,212,191,0.2); }
-.player-card.cha-card .player-card-name { color: var(--text-primary); }
+.player-card.chi-card { border-color: rgba(206,17,65,0.2); }
+.player-card.chi-card .player-card-name { color: var(--text-primary); }
 
 /* ===================== COMPARISON TABLE ===================== */
 .comp-table { width: 100%; border-collapse: collapse; }
@@ -135,21 +136,37 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
 .comp-table td:nth-child(2) { text-align: center; font-weight: 700; color: var(--phx-orange); }
 .comp-table td:last-child { text-align: right; font-weight: 700; color: var(--accent-teal); }
 .comp-table td.edge-phx { color: var(--phx-orange) !important; }
-.comp-table td.edge-cha { color: var(--accent-teal) !important; }
+.comp-table td.edge-chi { color: var(--chi-red) !important; }
 .edge-indicator { font-size: 9px; font-weight: 800; padding: 1px 5px; border-radius: 8px; display: inline-block; vertical-align: middle; margin-left: 4px; }
 .edge-phx-tag { background: rgba(233,106,31,0.18); color: var(--phx-orange); }
-.edge-cha-tag { background: rgba(45,212,191,0.15); color: var(--accent-teal); }
+.edge-chi-tag { background: rgba(206,17,65,0.15); color: var(--chi-red); }
 
 /* ===================== HUSTLE MATCHUP ===================== */
 .hustle-matchup-row { display: flex; align-items: center; padding: 8px 10px; background: rgba(255,255,255,0.02); border: 1px solid var(--card-border); border-radius: 8px; margin-bottom: 6px; gap: 8px; }
 .hustle-label-col { font-size: 11px; font-weight: 600; color: var(--text-secondary); flex: 1; text-align: center; }
 .hustle-metric-name { font-size: 10px; font-weight: 700; letter-spacing: 0.5px; color: var(--text-muted); text-transform: uppercase; min-width: 110px; text-align: center; }
 .hustle-phx-val { font-size: 13px; font-weight: 800; color: var(--phx-orange); min-width: 52px; text-align: center; }
-.hustle-cha-val { font-size: 13px; font-weight: 800; color: var(--accent-teal); min-width: 52px; text-align: center; }
+.hustle-chi-val { font-size: 13px; font-weight: 800; color: var(--chi-red); min-width: 52px; text-align: center; }
 .hustle-edge { font-size: 9px; font-weight: 800; padding: 2px 7px; border-radius: 10px; }
 .hustle-alert { background: rgba(248,113,113,0.08); border: 1px dashed rgba(248,113,113,0.3); border-radius: 10px; padding: 10px 12px; margin-top: 10px; }
 .hustle-alert-title { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; color: var(--accent-red); text-transform: uppercase; margin-bottom: 5px; }
 .hustle-alert-text { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+
+/* ===================== HUSTLE BAR ===================== */
+.hustle-bar-row { margin-bottom: 10px; }
+.hustle-bar-labels { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px; }
+.hustle-bar-phx { font-weight: 800; color: var(--phx-orange); }
+.hustle-bar-metric { font-size: 10px; font-weight: 700; letter-spacing: 0.5px; color: var(--text-muted); text-transform: uppercase; text-align: center; }
+.hustle-bar-chi { font-weight: 800; color: var(--chi-red); }
+.hustle-bar-track { display: flex; height: 8px; border-radius: 6px; overflow: hidden; background: var(--card-border); }
+.hustle-bar-phx-fill { background: var(--phx-orange); height: 100%; }
+.hustle-bar-chi-fill { background: var(--chi-red); height: 100%; }
+.hustle-rank-row { display: flex; justify-content: space-between; margin-top: 3px; }
+.rank-badge { font-size: 9px; font-weight: 800; padding: 1px 5px; border-radius: 6px; letter-spacing: 0.3px; }
+.rank-badge.top5 { background: rgba(74,222,128,0.2); color: var(--accent-green); }
+.rank-badge.top10 { background: rgba(233,106,31,0.18); color: var(--phx-orange); }
+.rank-badge.mid { background: rgba(255,255,255,0.07); color: var(--text-muted); }
+.rank-badge.bottom10 { background: rgba(248,113,113,0.15); color: var(--accent-red); }
 
 /* ===================== BETTING ===================== */
 .bet-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 12px; }
@@ -178,13 +195,13 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
 .series-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; color: var(--phx-orange); text-transform: uppercase; margin-bottom: 8px; }
 .series-score { font-size: 32px; font-weight: 900; color: var(--text-primary); line-height: 1; }
 .series-score span.s-phx { color: var(--phx-orange); }
-.series-score span.s-cha { color: var(--accent-teal); }
+.series-score span.s-chi { color: var(--chi-red); }
 .series-teams { display: flex; justify-content: center; gap: 40px; margin-top: 4px; font-size: 11px; color: var(--text-muted); font-weight: 700; letter-spacing: 1px; }
 .series-detail { font-size: 12px; color: var(--text-secondary); margin-top: 10px; line-height: 1.5; }
 
 /* ===================== RECENT FORM ===================== */
 .form-team-label { font-size: 10px; font-weight: 800; letter-spacing: 2px; color: var(--phx-orange); text-transform: uppercase; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 1px solid rgba(233,106,31,0.2); }
-.form-team-label.cha { color: var(--accent-teal); border-bottom-color: rgba(45,212,191,0.2); }
+.form-team-label.chi { color: var(--chi-red); border-bottom-color: rgba(206,17,65,0.2); }
 .form-row { display: flex; align-items: center; padding: 5px 8px; border-radius: 7px; margin-bottom: 4px; gap: 8px; font-size: 12px; }
 .form-row.win { background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.15); }
 .form-row.loss { background: rgba(248,113,113,0.06); border: 1px solid rgba(248,113,113,0.15); }
@@ -230,6 +247,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
 .tag.teal { background: rgba(45,212,191,0.1); border-color: rgba(45,212,191,0.3); color: var(--accent-teal); }
 .tag.yellow { background: rgba(251,191,36,0.1); border-color: rgba(251,191,36,0.3); color: var(--accent-yellow); }
 .tag.red { background: rgba(248,113,113,0.1); border-color: rgba(248,113,113,0.3); color: var(--accent-red); }
+.tag.chi { background: rgba(206,17,65,0.1); border-color: rgba(206,17,65,0.3); color: var(--chi-red); }
 
 /* ===================== FOOTER ===================== */
 .footer { background: var(--phx-purple); border-top: 2px solid var(--phx-orange); text-align: center; padding: 16px 20px 20px; margin-top: 24px; }
@@ -256,7 +274,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
 <header class="header" id="main-header" onclick="scrollTo({top:0,behavior:'smooth'})">
   <div class="header-eyebrow">🏀 Ownership Intelligence</div>
   <div class="header-title">Phoenix <span>Suns</span> Pregame</div>
-  <div class="header-sub">Thursday, April 2, 2026 &nbsp;•&nbsp; Spectrum Center · Charlotte, NC</div>
+  <div class="header-sub">Sunday, April 5, 2026 &nbsp;•&nbsp; United Center · Chicago, IL</div>
   <div class="avc-badge">Accelerated Velocity Consulting</div>
 </header>
 
@@ -265,26 +283,26 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
   <div class="team-score-block">
     <div class="team-name">Phoenix</div>
     <div class="team-abbr phx-color">PHX</div>
-    <div class="record">42-34</div>
+    <div class="record">42-35 · 7th West</div>
     <div class="pregame-badge">PREGAME INTEL</div>
   </div>
   <div class="score-divider">
     <div class="at">@</div>
-    <span class="tipoff">7:00 PM ET</span>
+    <span class="tipoff">3:30 PM ET</span>
   </div>
   <div class="team-score-block">
-    <div class="team-name">Charlotte</div>
-    <div class="team-abbr cha-color">CHA</div>
-    <div class="record">40-36</div>
-    <div style="font-size:10px; color:var(--text-muted); margin-top:4px;">FAV</div>
+    <div class="team-name">Chicago</div>
+    <div class="team-abbr chi-color">CHI</div>
+    <div class="record">29-48 · 12th East</div>
+    <div style="font-size:10px; color:var(--text-muted); margin-top:4px;">UNDERDOG</div>
   </div>
 </div>
 <div class="info-chips">
-  <span class="info-chip">FDSSE · AZFamily · Suns+</span>
-  <span class="info-chip orange">3RD IN 4 NIGHTS</span>
-  <span class="info-chip teal">CHA -5.5 · O/U 221.5</span>
-  <span class="info-chip yellow">AWAY TRIP GAME 3</span>
-  <span class="info-chip red">0-4 ROAD REST-DISADV</span>
+  <span class="info-chip">CHSN · AZFamily · Suns+</span>
+  <span class="info-chip orange">PHX -10.5</span>
+  <span class="info-chip">O/U 238.5</span>
+  <span class="info-chip red">CHI 6-GAME SKID</span>
+  <span class="info-chip yellow">ROAD TRIP FINALE</span>
 </div>
 
 <!-- ===================== ACCORDION ===================== -->
@@ -299,9 +317,9 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
   </div>
   <div class="section-body">
     <div class="narrative">
-      <p>The Phoenix Suns head to Charlotte for the <strong>third game in four nights</strong> — a brutal stretch that began with Monday's blowout win over Memphis and included Tuesday's four-point heartbreaker in Orlando. That fatigue is baked directly into the line: the Suns are <strong>5.5-point underdogs on the road</strong>, and their <strong>0-4 record in road rest-disadvantage situations</strong> this season is a sobering data point for ownership. Every game in this home-stretch of the regular season carries playoff weight, with the Suns sitting 7th in the West at 42-34 and the Clippers just three games back lurking at the 8th seed.</p>
-      <p>The matchup itself is deeply uncomfortable for Phoenix. Charlotte's offense is built around <strong>three legitimate 18+ PPG scorers</strong> — LaMelo Ball, Brandon Miller, and rookie Kon Knueppel — who collectively rank Charlotte as the <strong>NBA's #1 team in three-pointers made per game at 16.2</strong>. The Suns are allowing 12.1 threes per game defensively, meaning this figures to be a night where perimeter discipline is the entire game. <strong>Dillon Brooks</strong>, returning from his extended injury absence and now sitting on a <strong>17th technical foul</strong> (one away from an automatic suspension), must navigate foul trouble and emotion simultaneously — his last outing saw him rack up 5 fouls in just 22 minutes.</p>
-      <p>On the positive ledger: <strong>Mark Williams is listed as Questionable</strong> and could return from a month-long absence with a left foot stress reaction, which would immediately provide the rebounding and rim presence Phoenix desperately lacks. The Suns also own the season series — winning 111-99 in Phoenix on March 8 behind a Ball offensive meltdown (0-for-7 to start). Charlotte will be motivated for revenge in front of their home crowd. This is a <strong>play-in positioning game that Phoenix can ill afford to drop</strong>.</p>
+      <p>The Suns close out a 4-game road trip in Chicago against a Bulls team in free fall — losers of <strong>six straight</strong>, including a 40-point demolition at New York on Friday. Phoenix is <strong>1-2 on this road trip</strong> after wins at Memphis but losses at Orlando and Charlotte, and needs a strong finish before heading home for crucial games against Houston and Dallas.</p>
+      <p>The elephant in the room: these same Bulls stunned the Suns <strong>105-103 at Mortgage Matchup Center on March 5</strong>, with Collin Sexton erupting for 30 points and Chicago scoring 68 in the paint. That loss came without Giddey and Buzelis, who are both <strong>questionable today</strong> — Giddey with a hamstring, Buzelis with illness. The good news for Phoenix: <strong>Dillon Brooks and Mark Williams are both back</strong> and logged minutes in the last three games after extended absences.</p>
+      <p>At 42-35 and holding the 7th seed, the Suns can't afford to overlook anyone. The Clippers are <strong>2.5 games back</strong>, and every slip tightens the Play-In picture. With a 10.5-point spread, Vegas expects a comfortable Phoenix win — but the March meeting is fresh proof that no game is guaranteed.</p>
     </div>
   </div>
 </div>
@@ -314,36 +332,20 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
     <span class="section-arrow">▼</span>
   </div>
   <div class="section-body">
-    <div style="font-size:10px; font-weight:700; letter-spacing:1.5px; color:var(--text-muted); text-transform:uppercase; margin-bottom:10px;">April 1, 2026 — West Standings-Relevant Results</div>
+    <div style="font-size:10px; font-weight:700; letter-spacing:1.5px; color:var(--text-muted); text-transform:uppercase; margin-bottom:10px;">April 4, 2026 — Light Schedule Night (3 Games)</div>
 
     <div class="al-block">
       <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
-        <span style="font-size:13px; font-weight:800; color:var(--text-primary);">LAC vs. ___</span>
-        <span style="font-size:11px; color:var(--text-secondary);">Clippers result — 3 GB of PHX</span>
+        <span style="font-size:13px; font-weight:800; color:var(--text-primary);">DEN 136, SAS 134 (OT)</span>
+        <span style="font-size:11px; color:var(--accent-red);">Standings Impact</span>
       </div>
-      <div class="al-note">The Clippers remain the direct threat to Phoenix's play-in safety net. Any Clippers win shrinks the gap; a loss would give the Suns breathing room heading into Charlotte.</div>
-      <div class="al-sowhat">⚡ OWN: Check live standings — PHX must stay 3+ ahead of LAC to avoid must-win pressure every night.</div>
+      <div class="al-note">Denver grinds out an overtime win against San Antonio — the Nuggets stay comfortably ahead of Phoenix in the West standings. The Suns need teams above them to lose, and that didn't happen last night. Denver continues to hold firm in the upper half of the West bracket.</div>
+      <div class="al-sowhat">⚡ OWN: PHX needs West teams ahead of them to drop games. Denver winning in OT keeps the gap intact. Win today and focus on what we can control.</div>
     </div>
 
-    <div class="al-block">
-      <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
-        <span style="font-size:13px; font-weight:800; color:var(--accent-blue);">Eastern Play-In Bubble Watch</span>
-      </div>
-      <div class="al-note">Charlotte (40-36) sits in the East play-in zone. Their urgency tonight is real — a win over a fatigued Phoenix squad strengthens their standing, a loss hurts their positioning vs. the teams directly behind them.</div>
-      <div class="al-sowhat">⚡ OWN: CHA plays with home urgency AND comfort. Both teams need this win — but Charlotte's rest advantage tips the scales.</div>
-    </div>
-
-    <div class="al-block">
-      <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
-        <span style="font-size:13px; font-weight:800; color:var(--text-secondary);">MIN, DEN, OKC, LAL Implications</span>
-      </div>
-      <div class="al-note">PHX is 4.0 GB of the 6th seed (Minnesota). Slipping further in the standings would worsen play-in seeding and potentially set up a harder first-round bracket path. Every game in the West matters through the final 6.</div>
-      <div class="al-sowhat">⚡ OWN: PHX needs wins in these final stretch games. A loss tonight means the pressure multiplies for the Chicago/Houston/Dallas run that follows.</div>
-    </div>
-
-    <div class="alert-banner yellow">
-      <span class="alert-icon">⚠️</span>
-      <div class="alert-text"><strong>Note:</strong> Specific April 1 game scores not confirmed in research data. Standings context above reflects the known pre-game picture as of April 2, 2026. Verify live standings before tip-off.</div>
+    <div class="alert-banner blue" style="margin-top:4px;">
+      <span class="alert-icon">📋</span>
+      <div class="alert-text"><strong>Light night:</strong> DET 116, PHI 93 and MIA 152, WAS 136 also played — neither has meaningful impact on PHX's Western Conference seeding picture. Only 3 games total on Saturday's schedule.</div>
     </div>
   </div>
 </div>
@@ -359,75 +361,112 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
 
     <div class="injury-section-label">Phoenix Suns</div>
 
-    <div class="injury-row">
+    <div class="injury-row" style="border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.04);">
       <div>
         <div class="injury-name">Haywood Highsmith</div>
-        <div class="injury-reason">Right Knee</div>
+        <div class="injury-reason">Knee</div>
       </div>
-      <span class="status-badge status-out">OUT</span>
-    </div>
-
-    <div class="injury-row">
-      <div>
-        <div class="injury-name">Amir Coffey</div>
-        <div class="injury-reason">Left Ankle Sprain</div>
-      </div>
-      <span class="status-badge status-out">OUT</span>
+      <span class="status-badge status-q">GTD</span>
     </div>
 
     <div class="injury-row" style="border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.04);">
       <div>
-        <div class="injury-name">Mark Williams</div>
-        <div class="injury-reason">Left Foot Stress Reaction — possible return after ~1 month out</div>
+        <div class="injury-name">Amir Coffey</div>
+        <div class="injury-reason">Ankle</div>
+      </div>
+      <span class="status-badge status-q">GTD</span>
+    </div>
+
+    <div class="injury-row" style="border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.04);">
+      <div>
+        <div class="injury-name">Jordan Goodwin</div>
+        <div class="injury-reason">Calf</div>
+      </div>
+      <span class="status-badge status-q">GTD</span>
+    </div>
+
+    <div class="alert-banner green" style="margin-top:6px; margin-bottom:12px;">
+      <span class="alert-icon">✅</span>
+      <div class="alert-text"><strong>Brooks &amp; Williams Available:</strong> Dillon Brooks (broken left hand, missed 18 games) and Mark Williams (foot stress reaction) have both returned and logged minutes over the last 3 games. Watch their conditioning as they continue ramping up to playoff readiness.</div>
+    </div>
+
+    <div class="injury-section-label opp">Chicago Bulls</div>
+
+    <div class="injury-row" style="border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.04);">
+      <div>
+        <div class="injury-name">Josh Giddey</div>
+        <div class="injury-reason">Hamstring</div>
       </div>
       <span class="status-badge status-q">QUEST.</span>
+    </div>
+
+    <div class="injury-row" style="border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.04);">
+      <div>
+        <div class="injury-name">Matas Buzelis</div>
+        <div class="injury-reason">Illness</div>
+      </div>
+      <span class="status-badge status-q">QUEST.</span>
+    </div>
+
+    <div class="injury-row" style="border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.04);">
+      <div>
+        <div class="injury-name">Nick Richards</div>
+        <div class="injury-reason">Elbow</div>
+      </div>
+      <span class="status-badge status-q">QUEST.</span>
+    </div>
+
+    <div class="injury-row" style="border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.04);">
+      <div>
+        <div class="injury-name">Anfernee Simons</div>
+        <div class="injury-reason">Wrist</div>
+      </div>
+      <span class="status-badge status-dtd">DAY-TO-DAY</span>
     </div>
 
     <div class="injury-row" style="border-color: rgba(74,222,128,0.25);">
       <div>
-        <div class="injury-name">Grayson Allen</div>
-        <div class="injury-reason">Right Knee</div>
+        <div class="injury-name">Collin Sexton</div>
+        <div class="injury-reason">Finger</div>
       </div>
-      <span class="status-badge status-prob">PROB</span>
+      <span class="status-badge status-prob">PROBABLE</span>
     </div>
 
-    <div class="injury-row" style="border-color: rgba(233,106,31,0.3); background: rgba(233,106,31,0.04);">
+    <div class="injury-row" style="border-color: rgba(74,222,128,0.25);">
       <div>
-        <div class="injury-name">Dillon Brooks</div>
-        <div class="injury-reason">Available — returned vs. ORL (Tue). 5 fouls/22 min · <strong style="color:var(--accent-red)">17th tech (1 from suspension)</strong></div>
+        <div class="injury-name">Lachlan Olbrich</div>
+        <div class="injury-reason">Foot</div>
       </div>
-      <span class="status-badge status-avail">AVAIL</span>
-    </div>
-
-    <div class="alert-banner yellow" style="margin-top:6px; margin-bottom:12px;">
-      <span class="alert-icon">👁️</span>
-      <div class="alert-text"><strong>Williams Watch:</strong> If he plays, he immediately upgrades PHX's rebounding and rim presence against Charlotte's +7.1 rebounding advantage. Monitor official injury report closely — his status could define the game plan.</div>
-    </div>
-
-    <div class="injury-section-label opp">Charlotte Hornets</div>
-
-    <div class="injury-row">
-      <div>
-        <div class="injury-name">PJ Hall</div>
-        <div class="injury-reason">Ankle</div>
-      </div>
-      <span class="status-badge status-out">OUT</span>
+      <span class="status-badge status-prob">PROBABLE</span>
     </div>
 
     <div class="injury-row">
       <div>
-        <div class="injury-name">Liam McNeeley</div>
-        <div class="injury-reason">Ankle</div>
+        <div class="injury-name">Zach Collins</div>
+        <div class="injury-reason">Toe Surgery</div>
       </div>
-      <span class="status-badge status-out">OUT</span>
+      <span class="status-badge status-out">OUT FOR SEASON</span>
     </div>
 
-    <div class="injury-row" style="border-color: rgba(251,191,36,0.25);">
+    <div class="injury-row">
       <div>
-        <div class="injury-name">Tidjane Salaun</div>
+        <div class="injury-name">Jalen Smith</div>
         <div class="injury-reason">Calf</div>
       </div>
-      <span class="status-badge status-q">QUEST.</span>
+      <span class="status-badge status-out">OUT FOR SEASON</span>
+    </div>
+
+    <div class="injury-row">
+      <div>
+        <div class="injury-name">Noa Essengue</div>
+        <div class="injury-reason">Shoulder</div>
+      </div>
+      <span class="status-badge status-out">OUT FOR SEASON</span>
+    </div>
+
+    <div class="alert-banner yellow" style="margin-top:8px;">
+      <span class="alert-icon">👁️</span>
+      <div class="alert-text"><strong>Giddey &amp; Buzelis Watch:</strong> Both were OUT in the March 5 meeting when Chicago still won. If either plays today, the Bulls become significantly more dangerous. Giddey's near triple-double average (17/8.3/9.1) and Buzelis' two-way impact (16.3 PPG, 1.5 BLK) are the difference between a comfortable win and a scare.</div>
     </div>
 
   </div>
@@ -445,88 +484,99 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
     <div class="player-card">
       <div class="player-card-header">
         <div class="player-card-name">Devin Booker</div>
-        <div class="player-card-role">SG · Primary Scorer</div>
+        <div class="player-card-role">G · Franchise Cornerstone</div>
       </div>
       <div class="player-stat-row">
-        <div class="player-stat"><div class="player-stat-val">23.0</div><div class="player-stat-lbl">PPG (L20)</div></div>
+        <div class="player-stat"><div class="player-stat-val">25.7</div><div class="player-stat-lbl">PPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">3.9</div><div class="player-stat-lbl">RPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">6.0</div><div class="player-stat-lbl">APG</div></div>
       </div>
-      <div class="player-note">The engine of everything PHX does offensively. Came off his <strong>34-point game vs. ORL</strong> on Tuesday — but playing through a third game in four nights on the road tests even Booker's durability. The mismatch advantage against Charlotte's perimeter defense is real, but expect his legs to be the storyline in the 4th quarter.</div>
-    </div>
-
-    <div class="player-card">
-      <div class="player-card-header">
-        <div class="player-card-name">Collin Gillespie</div>
-        <div class="player-card-role">PG · Secondary Scorer</div>
-      </div>
-      <div class="player-stat-row">
-        <div class="player-stat"><div class="player-stat-val">13.1</div><div class="player-stat-lbl">PPG (L20)</div></div>
-        <div class="player-stat"><div class="player-stat-val">4.1</div><div class="player-stat-lbl">RPG</div></div>
-      </div>
-      <div class="player-note">Gillespie has been the second-most reliable scoring option in the last 20 games. His pace control and three-point shooting are key against Charlotte's pressure defense. A solid night from him takes pressure off Booker.</div>
+      <div class="player-note">Franchise cornerstone coming off a rough <strong>107-127 loss at Charlotte</strong>. Led the Suns with 27 PTS in the March 5 loss to these Bulls. Needs a bounce-back performance to set the tone for the road trip finale.</div>
     </div>
 
     <div class="player-card">
       <div class="player-card-header">
         <div class="player-card-name">Dillon Brooks</div>
-        <div class="player-card-role">SF · Defender / Enforcer</div>
+        <div class="player-card-role">G-F · Returning Starter</div>
       </div>
       <div class="player-stat-row">
-        <div class="player-stat"><div class="player-stat-val" style="color:var(--accent-red)">17</div><div class="player-stat-lbl">Techs (!) </div></div>
-        <div class="player-stat"><div class="player-stat-val">5</div><div class="player-stat-lbl">Fouls vs ORL</div></div>
+        <div class="player-stat"><div class="player-stat-val">20.5</div><div class="player-stat-lbl">PPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">3.6</div><div class="player-stat-lbl">RPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">1.8</div><div class="player-stat-lbl">APG</div></div>
       </div>
-      <div class="player-note"><strong>Critical watchpoint.</strong> Returns from a hand injury and immediately picked up a technical and 5 fouls in just 22 minutes against Orlando. On his 17th tech with the suspension threshold at 18. Tasked with guarding Ball/Miller/Knueppel — all three shoot threes at a high clip. Can he stay disciplined? His aggressiveness is needed, but at what cost?</div>
+      <div class="player-note">Back from <strong>broken left hand</strong> (missed 18 games). Second game since return — career-high scoring season. Watch his conditioning and defensive intensity as he gets his legs under him heading into the playoff push.</div>
     </div>
 
     <div class="player-card">
       <div class="player-card-header">
-        <div class="player-card-name">Oso Ighodaro</div>
-        <div class="player-card-role">C/PF · Versatile Big</div>
+        <div class="player-card-name">Jalen Green</div>
+        <div class="player-card-role">G · Explosive Scorer</div>
       </div>
       <div class="player-stat-row">
-        <div class="player-stat"><div class="player-stat-val">9.1</div><div class="player-stat-lbl">PPG (L20)</div></div>
-        <div class="player-stat"><div class="player-stat-val">6.6</div><div class="player-stat-lbl">RPG</div></div>
-        <div class="player-stat"><div class="player-stat-val">3.5</div><div class="player-stat-lbl">APG</div></div>
+        <div class="player-stat"><div class="player-stat-val">18.2</div><div class="player-stat-lbl">PPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">3.7</div><div class="player-stat-lbl">RPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">3.0</div><div class="player-stat-lbl">APG</div></div>
       </div>
-      <div class="player-note">PHX's frontcourt load-bearer if Williams remains out. His mobility on the defensive end matters against Charlotte's positionless lineups. The rebounding battle (CHA averages +7.1) will run through him. Posted 100% FG (2-2) and 10 boards vs. ORL.</div>
+      <div class="player-note">Explosive scorer averaging <strong>20.4 PPG over his last 20 games</strong>. Stepped up during Brooks' absence and hasn't slowed down. A second legitimate scoring option alongside Booker keeps the Bulls' defense from collapsing.</div>
+    </div>
+
+    <div class="player-card">
+      <div class="player-card-header">
+        <div class="player-card-name">Collin Gillespie</div>
+        <div class="player-card-role">G · Floor General</div>
+      </div>
+      <div class="player-stat-row">
+        <div class="player-stat"><div class="player-stat-val">13.0</div><div class="player-stat-lbl">PPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">4.1</div><div class="player-stat-lbl">RPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">4.8</div><div class="player-stat-lbl">APG</div></div>
+      </div>
+      <div class="player-note">Steady floor general shooting <strong>40.8% from three</strong>. Leads the team in 3PM per game (3.0). His pace control and three-point volume put constant pressure on perimeter defenders.</div>
+    </div>
+
+    <div class="player-card">
+      <div class="player-card-header">
+        <div class="player-card-name">Mark Williams</div>
+        <div class="player-card-role">C · Interior Anchor</div>
+      </div>
+      <div class="player-stat-row">
+        <div class="player-stat"><div class="player-stat-val">11.6</div><div class="player-stat-lbl">PPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">8.0</div><div class="player-stat-lbl">RPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">1.0</div><div class="player-stat-lbl">APG</div></div>
+      </div>
+      <div class="player-note">Just returned from foot stress reaction. Shooting <strong>63.7% FG</strong>. Interior anchor the Suns desperately missed — especially relevant given the Bulls scored 68 in the paint in the March meeting. His rim presence is a direct remedy.</div>
     </div>
 
     <div class="player-card">
       <div class="player-card-header">
         <div class="player-card-name">Royce O'Neale</div>
-        <div class="player-card-role">SF/PF · 3&D Wing</div>
+        <div class="player-card-role">F · 3&amp;D Veteran</div>
       </div>
       <div class="player-stat-row">
-        <div class="player-stat"><div class="player-stat-val">7.7</div><div class="player-stat-lbl">PPG (L20)</div></div>
-        <div class="player-stat"><div class="player-stat-val">4.1</div><div class="player-stat-lbl">RPG</div></div>
-        <div class="player-stat"><div class="player-stat-val">2.4</div><div class="player-stat-lbl">3PM/G</div></div>
+        <div class="player-stat"><div class="player-stat-val">9.9</div><div class="player-stat-lbl">PPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">4.8</div><div class="player-stat-lbl">RPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">2.7</div><div class="player-stat-lbl">APG</div></div>
       </div>
-      <div class="player-note">The hustle anchor who dropped 3 consecutive threes late in Q3 vs. ORL to nearly complete the comeback. His defensive switchability vs. Charlotte's three-guard lineups is valuable. Volume 3PT shooting keeps the defense honest.</div>
+      <div class="player-note">Veteran glue guy shooting <strong>40.7% from three</strong>. 74 games played — durability personified. His defensive switchability and spot-up shooting keep the floor spaced when Booker and Green are creating.</div>
     </div>
 
     <div class="player-card">
       <div class="player-card-header">
-        <div class="player-card-name">Jordan Goodwin</div>
-        <div class="player-card-role">G · Energy / Defense</div>
+        <div class="player-card-name">Oso Ighodaro</div>
+        <div class="player-card-role">C · Versatile Big</div>
       </div>
       <div class="player-stat-row">
-        <div class="player-stat"><div class="player-stat-val" style="color:var(--accent-yellow)">?</div><div class="player-stat-lbl">Hip/Groin</div></div>
+        <div class="player-stat"><div class="player-stat-val">6.5</div><div class="player-stat-lbl">PPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">5.1</div><div class="player-stat-lbl">RPG</div></div>
+        <div class="player-stat"><div class="player-stat-val">2.3</div><div class="player-stat-lbl">APG</div></div>
       </div>
-      <div class="player-note"><strong>Monitor closely.</strong> Left the Orlando game with a hip/groin issue. His defensive intensity (3 steals vs. ORL) and floor energy make him irreplaceable if healthy. Status uncertain heading into tonight.</div>
-    </div>
-
-    <div class="player-card">
-      <div class="player-card-header">
-        <div class="player-card-name">Nassir Little / Maluach</div>
-        <div class="player-card-role">Depth — if Williams OUT</div>
-      </div>
-      <div class="player-note">If Williams remains out, watch for extended minutes from the frontcourt depth. Maluach provides some rim protection and athletic big presence off the bench. The size disadvantage against Diabate's (8.3 RPG) rebounding becomes more acute without Williams.</div>
+      <div class="player-note">Versatile big shooting <strong>65.1% FG</strong>. Started during Williams' absence and continues to be a key bench piece. His mobility and finishing around the rim make him a reliable second big option.</div>
     </div>
 
     <div class="tag-row">
-      <span class="tag">Booker = #1 Option</span>
-      <span class="tag yellow">Brooks Foul Watch</span>
-      <span class="tag red">Fatigue Factor</span>
-      <span class="tag">Williams = X-Factor</span>
+      <span class="tag">Booker Bounce-Back</span>
+      <span class="tag">Brooks Return Watch</span>
+      <span class="tag yellow">Williams Paint Defense</span>
+      <span class="tag">Green Hot Streak</span>
     </div>
 
   </div>
@@ -541,83 +591,82 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
   </div>
   <div class="section-body">
 
-    <div class="alert-banner teal" style="margin-bottom:12px;">
-      <span class="alert-icon">🎯</span>
-      <div class="alert-text"><strong>Charlotte has THREE 18+ PPG scorers</strong> — one of only a handful of teams in the NBA with that depth at the wing positions. All three are elite 3-point shooters.</div>
+    <div class="alert-banner yellow" style="margin-bottom:12px;">
+      <span class="alert-icon">⚠️</span>
+      <div class="alert-text"><strong>Key Context:</strong> Giddey and Buzelis were both OUT on March 5 when the Bulls still won 105-103. If either or both play today, Chicago becomes a meaningfully more dangerous opponent than their record suggests.</div>
     </div>
 
-    <div class="player-card cha-card">
+    <div class="player-card chi-card">
       <div class="player-card-header">
-        <div class="player-card-name">LaMelo Ball</div>
-        <div class="player-card-role">PG · Franchise Player</div>
+        <div class="player-card-name">Josh Giddey</div>
+        <div class="player-card-role">G · Engine — QUESTIONABLE (Hamstring)</div>
       </div>
       <div class="player-stat-row">
-        <div class="player-stat"><div class="player-stat-val opp">20.9</div><div class="player-stat-lbl">PPG (L20)</div></div>
-        <div class="player-stat"><div class="player-stat-val opp">4.8</div><div class="player-stat-lbl">RPG</div></div>
-        <div class="player-stat"><div class="player-stat-val opp">6.4</div><div class="player-stat-lbl">APG</div></div>
-        <div class="player-stat"><div class="player-stat-val opp">4.3</div><div class="player-stat-lbl">3PM/G</div></div>
-      </div>
-      <div style="font-size:10px; color:var(--text-muted); margin-bottom:5px;">Season: 19.6 PPG / 4.8 RPG / 7.1 APG</div>
-      <div class="player-note"><strong class="opp">Revenge game alert.</strong> Ball went 0-for-7 from the field in the first meeting on March 8 in Phoenix — one of the worst starts of his career. Expect him to come into Spectrum Center with something to prove. His pull-up three-point volume (4.3/G over L20) is terrifying for a Suns defense allowing 12.1 3PM/G. Brooks may draw this assignment — a combustible matchup given Brooks' technical situation.</div>
-    </div>
-
-    <div class="player-card cha-card">
-      <div class="player-card-header">
-        <div class="player-card-name">Brandon Miller</div>
-        <div class="player-card-role">SF · Two-Way Star</div>
-      </div>
-      <div class="player-stat-row">
-        <div class="player-stat"><div class="player-stat-val opp">20.2</div><div class="player-stat-lbl">PPG (L20)</div></div>
-        <div class="player-stat"><div class="player-stat-val opp">5.7</div><div class="player-stat-lbl">RPG</div></div>
-        <div class="player-stat"><div class="player-stat-val opp">3.6</div><div class="player-stat-lbl">APG</div></div>
-        <div class="player-stat"><div class="player-stat-val opp">3.8</div><div class="player-stat-lbl">3PM/G</div></div>
-      </div>
-      <div class="player-note">Miller is the most complete player Charlotte has — a 6'9" wing who can score from all three levels, defend, and rebound. His <strong class="opp">3.8 3PM/G</strong> puts him in elite company. PHX's wings will need to be disciplined on closeouts — one step short and he punishes you from deep.</div>
-    </div>
-
-    <div class="player-card cha-card" style="border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.03);">
-      <div class="player-card-header">
-        <div class="player-card-name">Kon Knueppel</div>
-        <div class="player-card-role">SF/SG · Rookie Sensation</div>
-      </div>
-      <div class="player-stat-row">
-        <div class="player-stat"><div class="player-stat-val" style="color:var(--accent-yellow)">18.7</div><div class="player-stat-lbl">PPG (L20)</div></div>
-        <div class="player-stat"><div class="player-stat-val" style="color:var(--accent-yellow)">5.2</div><div class="player-stat-lbl">RPG</div></div>
-        <div class="player-stat"><div class="player-stat-val" style="color:var(--accent-yellow)">3.6</div><div class="player-stat-lbl">3PM/G</div></div>
-      </div>
-      <div class="player-note"><strong>3rd in the entire NBA in 3PM/G among rookies.</strong> Knueppel has emerged as one of the most dangerous shooters in the class of 2025. His off-ball movement and catch-and-shoot efficiency make him nearly impossible to guard in Charlotte's motion offense. Defenders have to chase him relentlessly for 48 minutes — a tall order on the second night of a back-to-back.</div>
-    </div>
-
-    <div class="player-card cha-card">
-      <div class="player-card-header">
-        <div class="player-card-name">Moussa Diabate</div>
-        <div class="player-card-role">PF/C · Rebounding Force</div>
-      </div>
-      <div class="player-stat-row">
-        <div class="player-stat"><div class="player-stat-val opp">6.9</div><div class="player-stat-lbl">PPG</div></div>
+        <div class="player-stat"><div class="player-stat-val opp">17.0</div><div class="player-stat-lbl">PPG</div></div>
         <div class="player-stat"><div class="player-stat-val opp">8.3</div><div class="player-stat-lbl">RPG</div></div>
+        <div class="player-stat"><div class="player-stat-val opp">9.1</div><div class="player-stat-lbl">APG</div></div>
+      </div>
+      <div class="player-note"><strong class="opp">Near triple-double machine</strong> and the Bulls' engine. QUESTIONABLE with hamstring. If he plays, he's the primary threat — his 9.1 APG leads the league and creates easy buckets for everyone around him. His absence was the story of the March meeting.</div>
+    </div>
+
+    <div class="player-card chi-card">
+      <div class="player-card-header">
+        <div class="player-card-name">Matas Buzelis</div>
+        <div class="player-card-role">F · Sophomore Breakout — QUESTIONABLE (Illness)</div>
+      </div>
+      <div class="player-stat-row">
+        <div class="player-stat"><div class="player-stat-val opp">16.3</div><div class="player-stat-lbl">PPG</div></div>
+        <div class="player-stat"><div class="player-stat-val opp">5.8</div><div class="player-stat-lbl">RPG</div></div>
+        <div class="player-stat"><div class="player-stat-val opp">2.0</div><div class="player-stat-lbl">APG</div></div>
+        <div class="player-stat"><div class="player-stat-val opp">1.5</div><div class="player-stat-lbl">BLK</div></div>
+      </div>
+      <div class="player-note">Sophomore breakout star who started all 76 games this season. QUESTIONABLE with illness. <strong class="opp">Shot-blocking wing who can score from anywhere</strong> — 1.5 BLK per game makes him a legitimate two-way threat. His rim presence is Chicago's best interior deterrent.</div>
+    </div>
+
+    <div class="player-card chi-card">
+      <div class="player-card-header">
+        <div class="player-card-name">Collin Sexton</div>
+        <div class="player-card-role">G · Microwave Scorer — PROBABLE (Finger)</div>
+      </div>
+      <div class="player-stat-row">
+        <div class="player-stat"><div class="player-stat-val opp">15.2</div><div class="player-stat-lbl">PPG</div></div>
+        <div class="player-stat"><div class="player-stat-val opp">2.0</div><div class="player-stat-lbl">RPG</div></div>
+        <div class="player-stat"><div class="player-stat-val opp">3.3</div><div class="player-stat-lbl">APG</div></div>
+      </div>
+      <div class="player-note"><strong class="opp">Dropped 30 on the Suns in March.</strong> Microwave scorer shooting 49.0% FG and 40.8% from three. PROBABLE today. He was the reason the Bulls won on March 5 — Phoenix must contain him from the opening tip.</div>
+    </div>
+
+    <div class="player-card chi-card">
+      <div class="player-card-header">
+        <div class="player-card-name">Tre Jones</div>
+        <div class="player-card-role">G · Backup PG / If Giddey Sits</div>
+      </div>
+      <div class="player-stat-row">
+        <div class="player-stat"><div class="player-stat-val opp">13.4</div><div class="player-stat-lbl">PPG</div></div>
+        <div class="player-stat"><div class="player-stat-val opp">3.1</div><div class="player-stat-lbl">RPG</div></div>
+        <div class="player-stat"><div class="player-stat-val opp">5.4</div><div class="player-stat-lbl">APG</div></div>
+      </div>
+      <div class="player-note">Steady backup PG shooting <strong>55.2% FG</strong>. Had <strong class="opp">21 PTS in the March win</strong> over PHX. If Giddey sits, Jones becomes the primary playmaker — and he's already proven he can carve up Phoenix's defense in that role.</div>
+    </div>
+
+    <div class="player-card chi-card">
+      <div class="player-card-header">
+        <div class="player-card-name">Anfernee Simons</div>
+        <div class="player-card-role">G · Dynamic Scorer — DAY-TO-DAY (Wrist)</div>
+      </div>
+      <div class="player-stat-row">
+        <div class="player-stat"><div class="player-stat-val opp">14.3</div><div class="player-stat-lbl">PPG</div></div>
+        <div class="player-stat"><div class="player-stat-val opp">2.5</div><div class="player-stat-lbl">RPG</div></div>
         <div class="player-stat"><div class="player-stat-val opp">2.4</div><div class="player-stat-lbl">APG</div></div>
       </div>
-      <div class="player-note">Diabate's 8.3 RPG anchors Charlotte's dominant rebounding operation (+7.1 avg overall). Against a Phoenix frontcourt that was already getting beaten on the glass, his activity on the boards could be the deciding factor in the paint battle.</div>
-    </div>
-
-    <div class="player-card cha-card">
-      <div class="player-card-header">
-        <div class="player-card-name">Miles Bridges</div>
-        <div class="player-card-role">PF · Athletic Scorer</div>
-      </div>
-      <div class="player-stat-row">
-        <div class="player-stat"><div class="player-stat-val opp">12.6</div><div class="player-stat-lbl">PPG</div></div>
-        <div class="player-stat"><div class="player-stat-val opp">4.5</div><div class="player-stat-lbl">RPG</div></div>
-      </div>
-      <div class="player-note">Bridges provides Charlotte with a physical, athletic fourth scoring threat off of or within their starting lineup. His ability to attack the paint and draw fouls adds another dimension beyond Charlotte's 3-point barrage.</div>
+      <div class="player-note">Dynamic scorer who has missed time recently with a wrist issue. Day-to-day today — if available, adds another scoring punch alongside Sexton. <strong class="opp">Two microwave scorers on the floor simultaneously</strong> would make Chicago's offense unpredictable even without Giddey.</div>
     </div>
 
     <div class="tag-row">
-      <span class="tag teal">Ball Revenge Game</span>
-      <span class="tag teal">Miller 3PT Threat</span>
-      <span class="tag teal">Knueppel Breakout</span>
-      <span class="tag yellow">3-Headed Monster</span>
+      <span class="tag chi">Giddey Q (Hamstring)</span>
+      <span class="tag chi">Buzelis Q (Illness)</span>
+      <span class="tag red">Sexton — 30 PTS in March</span>
+      <span class="tag yellow">Jones Proven vs PHX</span>
     </div>
 
   </div>
@@ -636,71 +685,71 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
         <tr>
           <th>Metric</th>
           <th>PHX ☀️</th>
-          <th>CHA 🐝</th>
+          <th>CHI 🐂</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td>OFF RTG</td>
+          <td>115.7 (#14) <span class="edge-indicator edge-phx-tag">PHX</span></td>
+          <td>114.3 (#21)</td>
+        </tr>
+        <tr>
+          <td>DEF RTG</td>
+          <td>113.9 (#11) <span class="edge-indicator edge-phx-tag">PHX</span></td>
+          <td>118.1 (#26)</td>
+        </tr>
+        <tr>
+          <td>NET RTG</td>
+          <td>+1.8 (#13) <span class="edge-indicator edge-phx-tag">PHX</span></td>
+          <td>-3.9 (#24)</td>
+        </tr>
+        <tr>
           <td>Points Per Game</td>
-          <td>112.9 <span class="edge-indicator edge-cha-tag">CHA</span></td>
-          <td>116.1</td>
+          <td>112.2 (#26)</td>
+          <td>~113</td>
         </tr>
         <tr>
-          <td>Rebounds Per Game</td>
-          <td>43.2 <span class="edge-indicator edge-cha-tag">CHA</span></td>
-          <td>46.2</td>
+          <td>Opp PPG</td>
+          <td>111.0 (#6) <span class="edge-indicator edge-phx-tag">PHX</span></td>
+          <td>~117</td>
         </tr>
         <tr>
-          <td>3-Pointers Made/G</td>
-          <td>14.9 <span class="edge-indicator edge-cha-tag">#1 NBA</span></td>
-          <td class="edge-cha">16.2</td>
+          <td>3PT%</td>
+          <td>36.3% (#9)</td>
+          <td class="edge-chi">36.5% (#8) <span class="edge-indicator edge-chi-tag">CHI</span></td>
         </tr>
         <tr>
-          <td>Scoring Differential</td>
-          <td>+1.8 <span class="edge-indicator edge-cha-tag">CHA</span></td>
-          <td>+4.7</td>
+          <td>Opp 3PT%</td>
+          <td style="color:var(--phx-orange); font-weight:700;">34.5% (#1) <span class="edge-indicator edge-phx-tag">PHX</span></td>
+          <td>~37%</td>
         </tr>
         <tr>
-          <td>PPG Rank (NBA)</td>
-          <td>25th</td>
-          <td>14th</td>
-        </tr>
-        <tr>
-          <td>RPG Rank (NBA)</td>
-          <td>19th</td>
-          <td>5th</td>
-        </tr>
-        <tr>
-          <td>3PM/G Rank (NBA)</td>
-          <td>4th <span class="edge-indicator edge-phx-tag">PHX</span></td>
-          <td>1st</td>
+          <td>FG%</td>
+          <td>45.4%</td>
+          <td>~45%</td>
         </tr>
         <tr>
           <td>Current Record</td>
-          <td>42-34</td>
-          <td>40-36</td>
+          <td>42-35</td>
+          <td>29-48</td>
         </tr>
         <tr>
-          <td>Home / Road Record</td>
-          <td>18-19 road</td>
-          <td>Home fav</td>
+          <td>Conference Seed</td>
+          <td style="color:var(--phx-orange); font-weight:700;">7th West</td>
+          <td style="color:var(--accent-red); font-weight:700;">12th East</td>
         </tr>
         <tr>
-          <td>Rest Situation</td>
-          <td style="color:var(--accent-red); font-weight:700;">3rd in 4 nights</td>
-          <td style="color:var(--accent-green); font-weight:700;">Full rest</td>
-        </tr>
-        <tr>
-          <td>Road Rest-Disadv</td>
-          <td style="color:var(--accent-red); font-weight:700;">0-4 this season</td>
-          <td style="color:var(--text-muted);">N/A</td>
+          <td>Losing Streak</td>
+          <td style="color:var(--text-muted);">—</td>
+          <td style="color:var(--accent-red); font-weight:700;">6 straight losses</td>
         </tr>
       </tbody>
     </table>
 
-    <div class="alert-banner red" style="margin-top:12px;">
+    <div class="alert-banner green" style="margin-top:12px;">
       <span class="alert-icon">📊</span>
-      <div class="alert-text"><strong>The numbers favor Charlotte across the board</strong> — offense, rebounds, home court, rest. PHX's edge? Season series lead (1-0), Booker as X-factor, and potential Williams return.</div>
+      <div class="alert-text"><strong>PHX advantages across the board</strong> — better defensive rating, net rating, opponent PPG, and opponent 3PT%. The Suns own the #1 perimeter defense in the NBA (34.5% opp 3PT%). Chicago's only edge is a razor-thin 3PT% advantage. Vegas reflects this with a 10.5-point line.</div>
     </div>
   </div>
 </div>
@@ -713,50 +762,117 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
     <span class="section-arrow">▼</span>
   </div>
   <div class="section-body">
-    <div style="display:flex; gap:6px; margin-bottom:8px; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--text-muted); text-transform:uppercase;">
-      <span style="flex:1; text-align:center;">PHX AVG</span>
+    <div style="display:flex; gap:6px; margin-bottom:10px; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--text-muted); text-transform:uppercase;">
+      <span style="flex:1; text-align:left; color:var(--phx-orange);">PHX AVG</span>
       <span style="min-width:120px; text-align:center;">METRIC</span>
-      <span style="flex:1; text-align:center;">CHA AVG</span>
+      <span style="flex:1; text-align:right; color:var(--chi-red);">CHI AVG</span>
     </div>
 
-    <div class="hustle-matchup-row">
-      <div class="hustle-phx-val">43.2</div>
-      <div class="hustle-metric-name">REBOUNDS / GAME</div>
-      <div class="hustle-cha-val">46.2 ↑</div>
+    <!-- Deflections: PHX 15.2, CHI 13.8 — PHX% = 52.4%, CHI% = 47.6% -->
+    <div class="hustle-bar-row">
+      <div class="hustle-bar-labels">
+        <span class="hustle-bar-phx">15.2</span>
+        <span class="hustle-bar-metric">Deflections / G</span>
+        <span class="hustle-bar-chi">13.8</span>
+      </div>
+      <div class="hustle-bar-track">
+        <div class="hustle-bar-phx-fill" style="width:52.4%"></div>
+        <div class="hustle-bar-chi-fill" style="width:47.6%"></div>
+      </div>
+      <div class="hustle-rank-row">
+        <span class="rank-badge top10">#8 PHX</span>
+        <span class="rank-badge mid">#18 CHI</span>
+      </div>
     </div>
 
-    <div class="hustle-matchup-row">
-      <div class="hustle-phx-val" style="color:var(--accent-red)">12.1</div>
-      <div class="hustle-metric-name">3PM ALLOWED / G</div>
-      <div class="hustle-cha-val">16.2 ↑</div>
+    <!-- Contested Shots: PHX 58.4, CHI 54.2 — PHX% = 51.9%, CHI% = 48.1% -->
+    <div class="hustle-bar-row">
+      <div class="hustle-bar-labels">
+        <span class="hustle-bar-phx">58.4</span>
+        <span class="hustle-bar-metric">Contested Shots / G</span>
+        <span class="hustle-bar-chi">54.2</span>
+      </div>
+      <div class="hustle-bar-track">
+        <div class="hustle-bar-phx-fill" style="width:51.9%"></div>
+        <div class="hustle-bar-chi-fill" style="width:48.1%"></div>
+      </div>
+      <div class="hustle-rank-row">
+        <span class="rank-badge top10">#7 PHX</span>
+        <span class="rank-badge bottom10">#22 CHI</span>
+      </div>
     </div>
 
-    <div class="hustle-matchup-row">
-      <div class="hustle-phx-val">14.9</div>
-      <div class="hustle-metric-name">3PM MADE / G</div>
-      <div class="hustle-cha-val">16.2 ↑</div>
+    <!-- Contested 2PT: PHX 34.6, CHI 32.1 — PHX% = 51.9%, CHI% = 48.1% -->
+    <div class="hustle-bar-row">
+      <div class="hustle-bar-labels">
+        <span class="hustle-bar-phx">34.6</span>
+        <span class="hustle-bar-metric">Contested 2PT / G</span>
+        <span class="hustle-bar-chi">32.1</span>
+      </div>
+      <div class="hustle-bar-track">
+        <div class="hustle-bar-phx-fill" style="width:51.9%"></div>
+        <div class="hustle-bar-chi-fill" style="width:48.1%"></div>
+      </div>
+      <div class="hustle-rank-row">
+        <span class="rank-badge top10">#9 PHX</span>
+        <span class="rank-badge bottom10">#21 CHI</span>
+      </div>
     </div>
 
-    <div class="hustle-matchup-row">
-      <div class="hustle-phx-val">112.9</div>
-      <div class="hustle-metric-name">SCORING OFFENSE</div>
-      <div class="hustle-cha-val">116.1 ↑</div>
+    <!-- Loose Balls: PHX 7.8, CHI 7.2 — PHX% = 52.0%, CHI% = 48.0% -->
+    <div class="hustle-bar-row">
+      <div class="hustle-bar-labels">
+        <span class="hustle-bar-phx">7.8</span>
+        <span class="hustle-bar-metric">Loose Balls Rec / G</span>
+        <span class="hustle-bar-chi">7.2</span>
+      </div>
+      <div class="hustle-bar-track">
+        <div class="hustle-bar-phx-fill" style="width:52.0%"></div>
+        <div class="hustle-bar-chi-fill" style="width:48.0%"></div>
+      </div>
+      <div class="hustle-rank-row">
+        <span class="rank-badge mid">#11 PHX</span>
+        <span class="rank-badge mid">#16 CHI</span>
+      </div>
     </div>
 
-    <div class="hustle-matchup-row">
-      <div class="hustle-phx-val">+1.8</div>
-      <div class="hustle-metric-name">SCORE DIFFERENTIAL</div>
-      <div class="hustle-cha-val">+4.7 ↑</div>
+    <!-- Screen Assists: PHX 9.4, CHI 10.2 — PHX% = 47.9%, CHI% = 52.1% -->
+    <div class="hustle-bar-row">
+      <div class="hustle-bar-labels">
+        <span class="hustle-bar-phx">9.4</span>
+        <span class="hustle-bar-metric">Screen Assists / G</span>
+        <span class="hustle-bar-chi">10.2</span>
+      </div>
+      <div class="hustle-bar-track">
+        <div class="hustle-bar-phx-fill" style="width:47.9%"></div>
+        <div class="hustle-bar-chi-fill" style="width:52.1%"></div>
+      </div>
+      <div class="hustle-rank-row">
+        <span class="rank-badge mid">#14 PHX</span>
+        <span class="rank-badge top10">#10 CHI</span>
+      </div>
     </div>
 
-    <div class="hustle-alert" style="margin-top:10px;">
-      <div class="hustle-alert-title">🚨 Critical Mismatch: Perimeter Defense</div>
-      <div class="hustle-alert-text">PHX is allowing <strong>12.1 three-pointers made per game</strong> on defense — and they're facing a Charlotte team that averages <strong>16.2 per game</strong> (NBA's best). This gap is the entire game. If Phoenix cannot get quality closeouts and force Charlotte below their 3PM average, this won't be close. The Suns' 3-point defense will be tested as severely as it has been all season.</div>
+    <!-- Charges Drawn: PHX 0.9, CHI 0.7 — PHX% = 56.3%, CHI% = 43.7% -->
+    <div class="hustle-bar-row">
+      <div class="hustle-bar-labels">
+        <span class="hustle-bar-phx">0.9</span>
+        <span class="hustle-bar-metric">Charges Drawn / G</span>
+        <span class="hustle-bar-chi">0.7</span>
+      </div>
+      <div class="hustle-bar-track">
+        <div class="hustle-bar-phx-fill" style="width:56.3%"></div>
+        <div class="hustle-bar-chi-fill" style="width:43.7%"></div>
+      </div>
+      <div class="hustle-rank-row">
+        <span class="rank-badge top5">#6 PHX</span>
+        <span class="rank-badge mid">#18 CHI</span>
+      </div>
     </div>
 
-    <div class="hustle-alert" style="background: rgba(251,191,36,0.06); border-color: rgba(251,191,36,0.3); margin-top:8px;">
-      <div class="hustle-alert-title" style="color:var(--accent-yellow);">⚠️ Rebounding Battle</div>
-      <div class="hustle-alert-text">Charlotte's +7.1 rebounding advantage is one of the largest in the NBA. Phoenix's 19th-ranked rebounding unit (43.2/G) will be pushed hard without Williams. Diabate's 8.3 RPG anchor + Bridges + Ball on the glass creates a nightmare scenario on the offensive glass.</div>
+    <div class="hustle-alert" style="margin-top:12px; background:rgba(233,106,31,0.06); border-color:rgba(233,106,31,0.3);">
+      <div class="hustle-alert-title" style="color:var(--phx-orange);">📊 Hustle Insight</div>
+      <div class="hustle-alert-text">The Suns bring a significantly more active defensive profile — stronger in contested shots, deflections, and charges drawn. Chicago's one edge is screen assists, reflecting their motion-heavy offensive scheme under Billy Donovan. Expect Phoenix's perimeter defense to be the difference-maker tonight.</div>
     </div>
   </div>
 </div>
@@ -772,34 +888,35 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
     <div class="series-card">
       <div class="series-label">2025-26 Season Series</div>
       <div class="series-score">
-        <span class="s-phx">1</span> – <span class="s-cha">0</span>
+        <span class="s-chi">1</span> – <span class="s-phx">0</span>
       </div>
       <div class="series-teams">
+        <span>CHI</span>
         <span>PHX</span>
-        <span>CHA</span>
       </div>
+      <div class="series-detail">Chicago leads the series — massive upset win on March 5</div>
     </div>
 
-    <div class="al-block">
-      <div style="font-size:12px; font-weight:800; color:var(--phx-orange); margin-bottom:6px;">Game 1 — March 8, 2026 · Footprint Center, Phoenix</div>
-      <div style="font-size:20px; font-weight:900; color:var(--text-primary); margin-bottom:6px;"><span style="color:var(--phx-orange)">PHX 111</span> — <span style="color:var(--text-muted)">CHA 99</span></div>
+    <div class="al-block" style="border-color: rgba(206,17,65,0.25);">
+      <div style="font-size:12px; font-weight:800; color:var(--chi-red); margin-bottom:6px;">Game 1 — March 5, 2026 · Mortgage Matchup Center, Phoenix</div>
+      <div style="font-size:20px; font-weight:900; color:var(--text-primary); margin-bottom:6px;"><span style="color:var(--chi-red)">CHI 105</span> — <span style="color:var(--text-muted)">PHX 103</span></div>
       <div class="al-note">
-        Suns controlled at home, winning by 12. <strong>LaMelo Ball went 0-for-7 to start the game</strong> — one of the worst offensive starts by a star player this season. Charlotte's three-point barrage was neutralized at Footprint Center, and Phoenix capitalized on Ball's struggles to build a lead they never relinquished.
+        Bulls won as <strong>12.5-point underdogs</strong> — one of the biggest upsets of the season. Collin Sexton erupted for <strong>30 PTS</strong>, Tre Jones added 21. Devin Booker led Phoenix with 27 PTS but it wasn't enough. The Bulls scored <strong>68 points in the paint</strong> and Phoenix shot under 40% from the field. Critically: <strong>Giddey and Buzelis were both OUT</strong> for Chicago that night.
       </div>
-      <div class="al-sowhat">⚡ OWN: Ball does not forget. This performance against PHX stings. Expect full intensity from him in Game 2 — tonight at home where he's significantly more dangerous.</div>
+      <div class="al-sowhat">⚡ OWN: The March upset is the single most important context point for today. If the Bulls could win shorthanded at PHX, don't underestimate them — even on a 6-game skid — in their own building.</div>
     </div>
 
-    <div class="al-block" style="border-color: rgba(45,212,191,0.2);">
-      <div style="font-size:12px; font-weight:800; color:var(--accent-teal); margin-bottom:5px;">Game 2 — Tonight · Spectrum Center, Charlotte <span style="color:var(--text-muted); font-weight:400;">7:00 PM ET</span></div>
-      <div class="al-note">Final meeting of the regular season. Charlotte has not seen Phoenix since March 8 and will have full rest, home crowd energy, and a revenge motive baked in. The Suns need to protect the series lead while fighting fatigue on a three-games-in-four-nights grind.</div>
+    <div class="al-block" style="border-color: rgba(233,106,31,0.3);">
+      <div style="font-size:12px; font-weight:800; color:var(--phx-orange); margin-bottom:5px;">Game 2 — Today · United Center, Chicago <span style="color:var(--text-muted); font-weight:400;">3:30 PM ET</span></div>
+      <div class="al-note">Final meeting of the regular season. The Suns arrive with a chip on their shoulder after the humbling March 5 loss at home. Williams is back to help with interior defense. The question mark: do Giddey and Buzelis suit up today?</div>
     </div>
 
     <div style="margin-top:6px;">
       <div class="tag-row">
-        <span class="tag">PHX Won G1 by 12</span>
+        <span class="tag chi">CHI Won G1 as -12.5 Dog</span>
         <span class="tag yellow">Final Meeting</span>
-        <span class="tag teal">Ball Revenge Spot</span>
-        <span class="tag red">Away, Fatigued</span>
+        <span class="tag red">Sexton 30 PTS in March</span>
+        <span class="tag">PHX Revenge Spot</span>
       </div>
     </div>
   </div>
@@ -814,80 +931,80 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
   </div>
   <div class="section-body">
 
-    <div class="form-team-label">Phoenix Suns — Last 5</div>
+    <div class="form-team-label">Phoenix Suns — Last 5 (2-3)</div>
 
+    <div class="form-row loss">
+      <span class="form-wl l">L</span>
+      <span class="form-opp">@ CHA</span>
+      <span class="form-score">107 – 127</span>
+      <span class="form-note">Apr 2 · Blowout loss</span>
+    </div>
     <div class="form-row loss">
       <span class="form-wl l">L</span>
       <span class="form-opp">@ ORL</span>
       <span class="form-score">111 – 115</span>
-      <span class="form-note">Tue · 2nd night B2B · Q4 collapse</span>
+      <span class="form-note">Mar 31 · Road loss</span>
     </div>
     <div class="form-row win">
       <span class="form-wl w">W</span>
       <span class="form-opp">@ MEM</span>
       <span class="form-score">131 – 105</span>
-      <span class="form-note">Mon · Dominant blowout</span>
+      <span class="form-note">Mar 30 · Dominant blowout</span>
     </div>
     <div class="form-row win">
       <span class="form-wl w">W</span>
       <span class="form-opp">vs UTA</span>
       <span class="form-score">134 – 109</span>
-      <span class="form-note">Home win</span>
+      <span class="form-note">Mar 28 · Home win</span>
     </div>
     <div class="form-row loss">
       <span class="form-wl l">L</span>
-      <span class="form-opp">@ DEN</span>
-      <span class="form-score">—</span>
-      <span class="form-note">Mid-March road loss</span>
-    </div>
-    <div class="form-row win">
-      <span class="form-wl w">W</span>
-      <span class="form-opp">vs CHA</span>
-      <span class="form-score">111 – 99</span>
-      <span class="form-note">Mar 8 · Season series G1</span>
+      <span class="form-opp">vs DEN</span>
+      <span class="form-score">123 – 125</span>
+      <span class="form-note">Mar 24 · Home heartbreaker</span>
     </div>
 
     <div class="alert-banner orange" style="margin: 10px 0;">
-      <span class="alert-icon">😮‍💨</span>
-      <div class="alert-text"><strong>Fatigue Context:</strong> Phoenix played a physical 115-111 overtime-ish loss in Orlando on Tuesday night. The team's road record without rest advantage is a confirmed <strong>0-4</strong> this season. Tonight is game 3 of a 4-game road trip.</div>
+      <span class="alert-icon">⚡</span>
+      <div class="alert-text"><strong>Road Trip Context:</strong> Phoenix went 1-2 on this 4-game road trip — winning big at Memphis, then dropping close ones at Orlando and Charlotte. Today is the finale, and they need a statement win to close the trip before heading home.</div>
     </div>
 
-    <div class="form-team-label cha" style="margin-top:14px;">Charlotte Hornets — Last 5</div>
+    <div class="form-team-label chi" style="margin-top:14px;">Chicago Bulls — Last 5 (0-5) — 6-Game Skid</div>
 
-    <div class="form-row win">
-      <span class="form-wl w">W</span>
-      <span class="form-opp">vs BKN</span>
-      <span class="form-score">117 – 86</span>
-      <span class="form-note">Dominant home win (+31)</span>
-    </div>
-    <div class="form-row win">
-      <span class="form-wl w">W</span>
-      <span class="form-opp">vs NYK</span>
-      <span class="form-score">114 – 103</span>
-      <span class="form-note">Quality home win</span>
+    <div class="form-row loss">
+      <span class="form-wl l">L</span>
+      <span class="form-opp">@ NYK</span>
+      <span class="form-score">96 – 136</span>
+      <span class="form-note">Apr 3 · -40 demolition</span>
     </div>
     <div class="form-row loss">
       <span class="form-wl l">L</span>
-      <span class="form-opp">@ PHI</span>
-      <span class="form-score">114 – 118</span>
-      <span class="form-note">Close road loss</span>
+      <span class="form-opp">vs IND</span>
+      <span class="form-score">126 – 145</span>
+      <span class="form-note">Apr 1 · Blowout at home</span>
     </div>
     <div class="form-row loss">
       <span class="form-wl l">L</span>
-      <span class="form-opp">@ BOS</span>
-      <span class="form-score">99 – 114</span>
-      <span class="form-note">Road loss vs. elite team</span>
+      <span class="form-opp">@ SAS</span>
+      <span class="form-score">114 – 129</span>
+      <span class="form-note">Mar 30 · Road loss</span>
     </div>
-    <div class="form-row win">
-      <span class="form-wl w">W</span>
-      <span class="form-opp">Other</span>
-      <span class="form-score">—</span>
-      <span class="form-note">CHA: 6 wins of last 8</span>
+    <div class="form-row loss">
+      <span class="form-wl l">L</span>
+      <span class="form-opp">@ MEM</span>
+      <span class="form-score">124 – 125</span>
+      <span class="form-note">Mar 28 · Narrow road loss</span>
+    </div>
+    <div class="form-row loss">
+      <span class="form-wl l">L</span>
+      <span class="form-opp">@ OKC</span>
+      <span class="form-score">113 – 131</span>
+      <span class="form-note">Mar 27 · Road loss</span>
     </div>
 
-    <div class="alert-banner teal" style="margin-top:10px;">
-      <span class="alert-icon">🔥</span>
-      <div class="alert-text">Charlotte has <strong>won 6 of their last 8 games</strong>, including impressive home wins over Brooklyn (+31) and the Knicks. They are playing their best basketball of the season heading into tonight.</div>
+    <div class="alert-banner red" style="margin-top:10px;">
+      <span class="alert-icon">📉</span>
+      <div class="alert-text">Chicago has lost <strong>6 straight games</strong> by an average of 18+ points. They were blown out 96-136 at New York just two days ago. The roster is depleted with 3 players out for the season. This is a team in full tank mode.</div>
     </div>
 
   </div>
@@ -905,39 +1022,34 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
     <div class="bet-grid">
       <div class="bet-cell">
         <div class="bet-label">Spread</div>
-        <div class="bet-val red">CHA -5.5</div>
-        <div class="bet-sub">PHX +5.5</div>
+        <div class="bet-val green">PHX -10.5</div>
+        <div class="bet-sub">CHI +10.5 (-115)</div>
       </div>
       <div class="bet-cell">
         <div class="bet-label">O/U</div>
-        <div class="bet-val yellow">221.5</div>
-        <div class="bet-sub">Range: –223.5</div>
+        <div class="bet-val yellow">238.5</div>
+        <div class="bet-sub">o -105 / u -111</div>
       </div>
       <div class="bet-cell">
         <div class="bet-label">Moneyline</div>
-        <div class="bet-val red">CHA -210</div>
-        <div class="bet-sub">PHX +180/+185</div>
+        <div class="bet-val green">PHX -525</div>
+        <div class="bet-sub">CHI +390</div>
       </div>
     </div>
 
     <div class="bet-insight">
-      <div class="bet-insight-label">⚡ Key Trend: Road Rest-Disadvantage</div>
-      <div class="bet-insight-text">Phoenix is <strong>0-4 this season when playing on the road with a rest disadvantage</strong>. Tonight checks every box: away game, third game in four nights, second of a road back-to-back. This is arguably the single most important contextual data point in the entire game preview.</div>
+      <div class="bet-insight-label">⚡ PHX ATS Trends</div>
+      <div class="bet-insight-text">The Suns are <strong>47-30 ATS this season</strong> and a strong <strong>5-2 ATS when favored by 10+ points</strong>. Phoenix covers big numbers efficiently — they don't just win, they tend to win convincingly in these spots.</div>
     </div>
 
-    <div class="bet-insight" style="background:rgba(45,212,191,0.05); border-color:rgba(45,212,191,0.25);">
-      <div class="bet-insight-label" style="color:var(--accent-teal);">📈 Charlotte Favorite ATS Trend</div>
-      <div class="bet-insight-text">Charlotte is <strong>13-4-1 ATS when favored by 5.5 or more points</strong>. That's a remarkably strong cover rate in big-number spots — Charlotte doesn't just win these games, they tend to win them by the margin.</div>
+    <div class="bet-insight" style="background:rgba(248,113,113,0.05); border-color:rgba(248,113,113,0.25);">
+      <div class="bet-insight-label" style="color:var(--accent-red);">⚠️ Underdog Caution — Bulls ATS History</div>
+      <div class="bet-insight-text">The last meeting should give bettors pause: Chicago covered as 12.5-point underdogs and <strong>won outright 105-103</strong>. The Bulls are <strong>6-5 ATS when 10+ point underdogs</strong> this season. Their 36-41 ATS record overall isn't strong, but big underdog spots have been their sweet spot.</div>
     </div>
 
     <div class="bet-insight" style="background:rgba(96,165,250,0.05); border-color:rgba(96,165,250,0.25);">
-      <div class="bet-insight-label" style="color:var(--accent-blue);">🔢 Total: Under Lean?</div>
-      <div class="bet-insight-text">The first meeting between these teams on March 8 went <strong>UNDER</strong> the total (PHX 111, CHA 99 = 210 combined). With PHX's fatigue factored in, scoring may be suppressed on their end despite Charlotte's high-powered offense. The O/U is set at 221.5–223.5 — watch for movement toward the Under.</div>
-    </div>
-
-    <div class="bet-insight" style="background:rgba(233,106,31,0.05); border-color:rgba(233,106,31,0.25);">
-      <div class="bet-insight-label" style="color:var(--phx-orange);">🔍 PHX Value Side?</div>
-      <div class="bet-insight-text">At +5.5, Phoenix has cover value if they stay competitive and avoid a Q4 blowout. They won the season series 111-99 and Booker has the talent to keep this game close even on tired legs. The question is the fourth quarter — their most recent back-to-back resulted in a Q4 collapse (17 points).</div>
+      <div class="bet-insight-label" style="color:var(--accent-blue);">🔢 Total Analysis</div>
+      <div class="bet-insight-text">O/U set at 238.5 — a high number for a game involving a struggling Bulls offense. The Bulls have been giving up points on defense (26th DEF RTG), which could push the total. However, Chicago's recent games have seen their offense collapse during losing streaks. Watch for movement toward the under if both Giddey and Buzelis are ruled out.</div>
     </div>
 
     <div style="font-size:10px; color:var(--text-muted); font-style:italic; margin-top:6px; padding:6px 8px; background:rgba(255,255,255,0.02); border-radius:6px;">All gambling data is for informational context only. This dashboard is an ownership intelligence tool, not a gambling advisory.</div>
@@ -957,48 +1069,40 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
     <div class="storyline-item">
       <span class="storyline-icon">🔴</span>
       <div>
-        <div class="storyline-title">Brooks Suspension Watch — Tech #17</div>
-        <div class="storyline-text">Every Dillon Brooks possession is now a storyline. He's on his 17th technical foul of the season — the NBA threshold for an automatic one-game suspension is 18. After picking up 5 fouls and a tech in just 22 minutes against Orlando, the media narrative is squarely on whether Brooks can contain his competitive fire in Charlotte's loud home environment. The Suns desperately need him available, but also need him disciplined.</div>
+        <div class="storyline-title">Revenge Game for the Suns</div>
+        <div class="storyline-text">The March 5 loss at home to a depleted Bulls team was one of the most embarrassing of the season. Phoenix shot under 40% from the field and allowed 68 points in the paint — at home, as 12.5-point favorites. Today is the only shot at payback before the season ends.</div>
       </div>
     </div>
 
     <div class="storyline-item">
-      <span class="storyline-icon">🩺</span>
+      <span class="storyline-icon">💪</span>
       <div>
-        <div class="storyline-title">Mark Williams' Possible Return</div>
-        <div class="storyline-text">Listed as Questionable after a month-long absence (left foot stress reaction), Williams' return would be the biggest rotation upgrade PHX could get. He provides rim protection, rebounding, and interior presence — three things Charlotte attacks relentlessly. His availability will be the most-watched aspect of pregame warmups. If he plays, expect his minutes to be carefully managed.</div>
+        <div class="storyline-title">Brooks &amp; Williams Back in the Fold</div>
+        <div class="storyline-text">Both starters returned during this road trip after extended absences. Brooks (broken hand, 18 games missed) and Williams (foot stress reaction) are getting their legs under them just in time for the playoff push. Their conditioning and integration back into the starting rotation is the most important roster storyline heading into the final weeks.</div>
       </div>
     </div>
 
     <div class="storyline-item">
-      <span class="storyline-icon">🎯</span>
+      <span class="storyline-icon">📉</span>
       <div>
-        <div class="storyline-title">Charlotte's 3-Point Dominance Narrative</div>
-        <div class="storyline-text">National media has been all over Charlotte's emergence as the NBA's premier three-point team. With Ball, Miller, and Knueppel all averaging 3.6+ 3PM/G, the Hornets' ability to rain threes from every angle makes them one of the most entertaining — and dangerous — teams to defend in the league. Tonight is a marquee showcase for that identity.</div>
-      </div>
-    </div>
-
-    <div class="storyline-item">
-      <span class="storyline-icon">😴</span>
-      <div>
-        <div class="storyline-title">Suns Fatigue Narrative</div>
-        <div class="storyline-text">After Monday's 131-105 win in Memphis and Tuesday's 115-111 loss in Orlando, the Suns are grinding through one of the hardest stretches on their schedule. Local and national media will examine whether the Suns can compete on fumes against a rested Charlotte team playing with playoff urgency at home.</div>
+        <div class="storyline-title">Bulls in Tank Mode</div>
+        <div class="storyline-text">Chicago has lost 6 straight by an average of 18+ points. They were blown out 96-136 at New York on Friday. The roster is depleted with 3 players out for the season and their two best players questionable. Every indication suggests the Bulls are playing for draft positioning, not wins.</div>
       </div>
     </div>
 
     <div class="storyline-item">
       <span class="storyline-icon">📈</span>
       <div>
-        <div class="storyline-title">Play-In Race — Every Game Matters</div>
-        <div class="storyline-text">Phoenix at 42-34 in the 7th seed with the Clippers only 3 games back. With roughly 6 games remaining in the regular season, the Suns cannot afford a losing streak. A win tonight and the subsequent games vs. Chicago, Houston, and Dallas become manageable. A loss makes the path significantly narrower.</div>
+        <div class="storyline-title">Playoff Seeding Pressure</div>
+        <div class="storyline-text">At 42-35, the Suns hold the 7th seed but the Clippers (2.5 games back) are lurking. A loss here to a bottom-feeder would be devastating for momentum heading into home games vs Houston and Dallas. Every game in the final stretch carries seeding implications.</div>
       </div>
     </div>
 
     <div class="storyline-item">
       <span class="storyline-icon">⭐</span>
       <div>
-        <div class="storyline-title">Kon Knueppel — The Rookie Storyline</div>
-        <div class="storyline-text">Knueppel's emergence as one of the NBA's elite shooters mid-season has been a major storyline. At 18.7 PPG over the last 20 games and 3rd in the NBA in 3PM/G among rookies, he's getting major national attention. A big performance tonight against a high-profile opponent continues his Rookie of the Year candidacy.</div>
+        <div class="storyline-title">Buzelis' Breakout Year</div>
+        <div class="storyline-text">The 2nd-year forward (16.3 PPG, 1.5 BLK) has started all 76 games and emerged as one of the most dynamic two-way players in the Eastern Conference. If he plays through illness today, he's the Bulls' most dangerous option — a shot-blocker who can score from anywhere and make life difficult for Phoenix's interior game.</div>
       </div>
     </div>
 
@@ -1017,48 +1121,48 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
     <div class="watch-item critical">
       <div class="watch-num">1</div>
       <div class="watch-content">
-        <div class="watch-title">Brooks Discipline — The Line He Cannot Cross</div>
-        <div class="watch-desc">Watch every Brooks-Ball interaction. Brooks is on tech #17 — one away from a mandatory suspension. He's defending a player with a revenge motive who already went 0-7 against him once. <strong>If he picks up a tech tonight, the next one ends his season for a game.</strong> Does Ott put a leash on him defensively against Ball? Does he pull Brooks after two fouls? This is a coaching chess match with massive stakes.</div>
-      </div>
-    </div>
-
-    <div class="watch-item critical">
-      <div class="watch-num">2</div>
-      <div class="watch-content">
-        <div class="watch-title">Q4 Energy — The Fatigue Reckoning</div>
-        <div class="watch-desc">The Suns have dropped two of their last three fourth quarters in road games under fatigue conditions. On Tuesday in Orlando they scored just <strong>17 points in Q4</strong> while playing back-to-back. Tonight is game three in four nights. Watch the rotation depth in the fourth quarter — does Ott trust his starters to close, or does fatigue force him into undesirable lineups?</div>
+        <div class="watch-title">Road Trip Close-Out Mentality</div>
+        <div class="watch-desc">After two straight losses, watch whether the team plays with urgency or mails in the finale against a tanking team. <strong>Body language and effort matter</strong> heading into playoffs. Sleepwalking through a game against a lottery team is a warning sign for ownership — winning the right way here builds confidence.</div>
       </div>
     </div>
 
     <div class="watch-item">
+      <div class="watch-num">2</div>
+      <div class="watch-content">
+        <div class="watch-title">Brooks &amp; Williams Conditioning</div>
+        <div class="watch-desc">Both are 2-3 games into their return. Monitor their minutes, movement quality, and defensive positioning. <strong>Are they approaching playoff readiness?</strong> Brooks at full conditioning is a different team — his defensive intensity and 20+ PPG are the difference between a good team and a dangerous one.</div>
+      </div>
+    </div>
+
+    <div class="watch-item critical">
       <div class="watch-num">3</div>
       <div class="watch-content">
-        <div class="watch-title">Williams Return Impact on Size Equation</div>
-        <div class="watch-desc">If Williams plays, he immediately upgrades PHX in the rebounding (Charlotte: +7.1 avg) and rim protection battles. Watch how many minutes he gets — coming off a stress reaction, he'll be on a usage ceiling. With Williams: the Charlotte rebounding advantage shrinks dramatically. Without: PHX is outgunned in the paint. This decision is the biggest game-plan variable before tip-off.</div>
+        <div class="watch-title">Paint Protection Redemption</div>
+        <div class="watch-desc">Bulls scored <strong>68 in the paint</strong> in the March meeting. With Williams back at center, this is a direct test of interior defense. Track opponent points in the paint closely — if Chicago is getting into the lane at will again, something is wrong with the defensive scheme regardless of the overall score.</div>
       </div>
     </div>
 
     <div class="watch-item">
       <div class="watch-num">4</div>
       <div class="watch-content">
-        <div class="watch-title">Perimeter Defense vs. NBA's Best 3PT Team</div>
-        <div class="watch-desc">PHX allows <strong>12.1 threes per game</strong> on defense. Charlotte averages <strong>16.2</strong>. That's a potential 4-possession swing per game purely from three-point makes. Watch closeout quality, ball-screen navigation, and whether PHX goes under or over screens on Ball, Miller, and Knueppel. <strong>Any hint of shot-clock violations or tired legs on closeouts will be exploited immediately.</strong></div>
+        <div class="watch-title">Booker's Response</div>
+        <div class="watch-desc">Coming off a lopsided loss in Charlotte. <strong>Does the franchise player set the tone early?</strong> Leadership performances before playoffs build confidence across the roster. A dominant Booker game — not just statistically but in terms of command and presence — is a meaningful ownership data point.</div>
       </div>
     </div>
 
     <div class="watch-item">
       <div class="watch-num">5</div>
       <div class="watch-content">
-        <div class="watch-title">Ball / Knueppel / Miller — Three-Headed Monster</div>
-        <div class="watch-desc">Three players averaging 18.7+ PPG with 3.6+ 3PM/G each. You cannot guard all three. Watch how PHX rotates their defensive assignments — which Suns wing takes Ball, who chases Knueppel off screens, how they approach Miller's size advantage. If one of the three gets hot, does PHX have an answer or do they ride it out until the shot stops going in?</div>
+        <div class="watch-title">Defensive Identity Check</div>
+        <div class="watch-desc">Suns rank <strong>#1 in opponent 3PT% defense</strong> (34.5%). The Bulls shoot 36.5% from deep. Watch if the Suns' perimeter defense holds tonight — this metric is a huge playoff weapon. Closeout discipline, ball-screen navigation, and communication on the perimeter all matter here.</div>
       </div>
     </div>
 
     <div class="watch-item">
       <div class="watch-num">6</div>
       <div class="watch-content">
-        <div class="watch-title">Playoff Urgency Meter — Clippers 3 Games Back</div>
-        <div class="watch-desc">The Suns are 7th in the West. The Clippers are 3 games back. With ~6 games left, every single game has <strong>seeding implications</strong>. A loss tonight makes the final week of the regular season high-pressure. A win gives breathing room and maintains momentum heading into the home stand. Watch how the Suns respond emotionally — do they compete with urgency or do the legs just run dry?</div>
+        <div class="watch-title">Bench Depth Inventory</div>
+        <div class="watch-desc">With Highsmith, Coffey, and Goodwin all game-time decisions, the rotation could be thin. <strong>How do role players like Ighodaro step up?</strong> Bench depth is a critical playoff asset — which players use this game to put their names in the rotation for the postseason run?</div>
       </div>
     </div>
 
@@ -1076,40 +1180,35 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
 
     <div class="sched-list">
       <div class="sched-row tonight">
-        <span class="sched-date">Apr 2</span>
-        <span class="sched-opp">@ Charlotte Hornets <span class="sched-ha away">AWAY</span></span>
-        <span style="font-size:11px; color:var(--phx-orange); font-weight:800;">TONIGHT 7:00 ET</span>
-      </div>
-      <div class="sched-row">
         <span class="sched-date">Apr 5</span>
-        <span class="sched-opp"><span class="sched-ha away">AWAY</span> @ Chicago Bulls</span>
-        <span class="sched-time">Road Trip Finale</span>
+        <span class="sched-opp">@ Chicago Bulls <span class="sched-ha away">AWAY</span></span>
+        <span style="font-size:11px; color:var(--phx-orange); font-weight:800;">TONIGHT 3:30 ET</span>
       </div>
       <div class="sched-row">
         <span class="sched-date">Apr 7</span>
         <span class="sched-opp"><span class="sched-ha home">HOME</span> vs Houston Rockets</span>
-        <span class="sched-time">Home Stand Begins</span>
+        <span class="sched-time" style="font-size:11px; color:var(--text-muted);">Home Stand Begins</span>
       </div>
       <div class="sched-row">
         <span class="sched-date">Apr 8</span>
         <span class="sched-opp"><span class="sched-ha home">HOME</span> vs Dallas Mavericks</span>
-        <span class="sched-time">Back-to-Back Home</span>
+        <span class="sched-time" style="font-size:11px; color:var(--text-muted);">Back-to-Back Home</span>
       </div>
       <div class="sched-row">
         <span class="sched-date">Apr 10</span>
-        <span class="sched-opp"><span class="sched-ha away">AWAY</span> @ LA Lakers</span>
-        <span class="sched-time">Road · High Stakes</span>
+        <span class="sched-opp"><span class="sched-ha away">AWAY</span> @ Los Angeles Lakers</span>
+        <span class="sched-time" style="font-size:11px; color:var(--text-muted);">Road · High Stakes</span>
       </div>
       <div class="sched-row">
         <span class="sched-date">Apr 12</span>
         <span class="sched-opp"><span class="sched-ha away">AWAY</span> @ Oklahoma City Thunder</span>
-        <span class="sched-time">Road · Season Finale</span>
+        <span class="sched-time" style="font-size:11px; color:var(--text-muted);">Road · Season Finale</span>
       </div>
     </div>
 
     <div class="alert-banner orange" style="margin-top:12px;">
       <span class="alert-icon">🗓️</span>
-      <div class="alert-text"><strong>Context:</strong> After tonight's game in Charlotte, Phoenix still has one more road game (Apr 5 @ Chicago) before returning home for Houston and Dallas. The final stretch includes tough games @ Lakers and @ OKC — both with play-in/playoff implications. <strong>Win tonight and make the home stand count.</strong></div>
+      <div class="alert-text"><strong>Context:</strong> Win today and Phoenix returns home for two massive games against Houston and Dallas. A strong finish to the road trip sets up the homestand with momentum and confidence. Then two final road tests @ Lakers and @ OKC to close the regular season. <strong>Today's mentality sets the tone for the playoff push.</strong></div>
     </div>
 
   </div>
@@ -1121,8 +1220,12 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark-b
 <div class="footer">
   <div class="footer-dominate">#DOMINATE</div>
   <div class="footer-goodluck">Good luck tonight, Mat</div>
-  <div class="footer-avc">Accelerated Velocity Consulting</div>
-  <div class="footer-timestamp">Generated April 2, 2026 — 1:50 PM MST</div>
+  <div class="footer-avc">
+    <svg width="120" height="18" viewBox="0 0 120 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:6px auto 0;">
+      <text x="0" y="14" font-family="Inter, sans-serif" font-size="8.5" font-weight="800" letter-spacing="2" fill="#555e78" text-transform="uppercase">ACCELERATED VELOCITY CONSULTING</text>
+    </svg>
+  </div>
+  <div class="footer-timestamp">Generated April 5, 2026 — 12:30 PM MST</div>
 </div>
 
 <script>
