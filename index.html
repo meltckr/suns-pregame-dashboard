@@ -7,20 +7,20 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <!-- Page Title -->
-<title>PHX vs GSW — Pregame Intelligence | Apr 17</title>
-<meta name="description" content="ELIMINATION GAME. PHX hosts GSW in the Play-In finale. Winner = #8 seed vs OKC. Loser goes home. PHX -3.5 favorites. Curry dropped 35 Wednesday. Porzingis questionable (ankle). Full ownership brief inside.">
+<title>PHX at OKC — Pregame Intelligence | Apr 19</title>
+<meta name="description" content="Playoff Round 1 Game 1. #8 Suns at #1 Thunder (defending champs). Green scored 36 in play-in. OKC -14 favorites. Allen & M. Williams questionable. Full ownership brief inside.">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://meltckr.github.io/suns-pregame-dashboard/">
-<meta property="og:title" content="PHX vs GSW — Pregame Intelligence | Apr 17">
-<meta property="og:description" content="ELIMINATION GAME. PHX hosts GSW — winner gets #8 seed vs OKC, loser is done. PHX -3.5. Curry dropped 35 in LAC comeback. Porzingis questionable (ankle). Full ownership brief inside.">
+<meta property="og:title" content="PHX at OKC — Pregame Intelligence | Apr 19">
+<meta property="og:description" content="Playoff Round 1 Game 1. #8 Suns at #1 Thunder (defending champs). Green scored 36 in play-in. OKC -14 favorites. Allen & M. Williams questionable. Full ownership brief inside.">
 <meta property="og:image" content="https://meltckr.github.io/suns-pregame-dashboard/og-image.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PHX vs GSW — Pregame Intelligence | Apr 17">
-<meta name="twitter:description" content="ELIMINATION GAME. PHX hosts GSW — winner gets #8 seed vs OKC, loser is done. PHX -3.5. Curry dropped 35 in LAC comeback. Porzingis questionable (ankle). Full ownership brief inside.">
+<meta name="twitter:title" content="PHX at OKC — Pregame Intelligence | Apr 19">
+<meta name="twitter:description" content="Playoff Round 1 Game 1. #8 Suns at #1 Thunder (defending champs). Green scored 36 in play-in. OKC -14 favorites. Allen & M. Williams questionable. Full ownership brief inside.">
 <meta name="twitter:image" content="https://meltckr.github.io/suns-pregame-dashboard/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +41,7 @@
   --accent-glow: rgba(232, 96, 30, 0.15);
   --suns-purple: #1d1160;
   --suns-orange: #e56020;
-  --gsw-gold: #ffc72c;
+  --okc-blue: #007AC1;
   --win: #22c55e;
   --loss: #ef4444;
   --check: #22c55e;
@@ -84,15 +84,6 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0; height: 3px;
   background: linear-gradient(90deg, var(--suns-purple), var(--suns-orange), var(--suns-purple));
-}
-
-/* Elimination pulse overlay */
-.header::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse at 50% 100%, rgba(239,68,68,0.06) 0%, transparent 70%);
-  pointer-events: none;
 }
 
 .brand-bar {
@@ -267,6 +258,7 @@ body {
 .chip-injury { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.3); color: var(--gold); }
 .chip-elim { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.3); color: var(--loss); }
 .chip-series { background: rgba(139,92,246,0.1); border-color: rgba(139,92,246,0.3); color: var(--purple); }
+.chip-playoff { background: rgba(0,122,193,0.12); border-color: rgba(0,122,193,0.35); color: #4ab3f4; }
 
 /* Win Probability Bar */
 .prob-bar-wrap {
@@ -438,7 +430,7 @@ body {
 .player-name { font-size: 13px; font-weight: 700; color: #fff; }
 .player-role { font-size: 10px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 .player-stats { font-size: 12px; color: var(--suns-orange); font-weight: 600; margin-bottom: 5px; }
-.player-stats.opp-stats { color: var(--gsw-gold); }
+.player-stats.opp-stats { color: var(--okc-blue); }
 .player-note { font-size: 11px; color: var(--text-muted); line-height: 1.55; }
 .player-note strong { color: var(--text); }
 .player-status-flag {
@@ -475,7 +467,7 @@ body {
 }
 .comp-team-name { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
 .comp-team-name.phx { color: var(--suns-orange); }
-.comp-team-name.opp { color: var(--gsw-gold); }
+.comp-team-name.opp { color: var(--okc-blue); }
 
 .stat-compare-row {
   display: flex;
@@ -501,7 +493,7 @@ body {
 }
 .hustle-team-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; }
 .hustle-team-label.phx { color: var(--suns-orange); }
-.hustle-team-label.opp { color: var(--gsw-gold); }
+.hustle-team-label.opp { color: var(--okc-blue); }
 
 .hustle-row {
   display: flex;
@@ -521,7 +513,7 @@ body {
 }
 .hustle-val.winner { color: var(--suns-orange); }
 .hustle-val.loser { color: var(--text-muted); font-weight: 600; }
-.hustle-val.opp-winner { color: var(--gsw-gold); }
+.hustle-val.opp-winner { color: var(--okc-blue); }
 
 .hustle-cat { flex: 1; text-align: center; }
 .hustle-cat-name {
@@ -546,7 +538,7 @@ body {
 .hustle-bar.right { border-radius: 0 3px 3px 0; }
 .hustle-bar.bar-winner { background: var(--suns-orange); }
 .hustle-bar.bar-loser { background: var(--surface-3); }
-.hustle-bar.bar-opp-winner { background: var(--gsw-gold); }
+.hustle-bar.bar-opp-winner { background: var(--okc-blue); }
 
 .hustle-rank {
   font-size: 8px;
@@ -611,7 +603,7 @@ body {
   margin-bottom: 8px;
 }
 .form-team-header.phx { color: var(--suns-orange); }
-.form-team-header.opp { color: var(--gsw-gold); }
+.form-team-header.opp { color: var(--okc-blue); }
 
 .form-row {
   display: flex;
@@ -645,8 +637,8 @@ body {
   font-weight: 800;
   padding: 1px 6px;
   border-radius: 3px;
-  background: rgba(239,68,68,0.12);
-  color: var(--loss);
+  background: rgba(232,96,30,0.12);
+  color: var(--suns-orange);
   letter-spacing: 0.5px;
   margin-left: 4px;
 }
@@ -744,7 +736,7 @@ body {
 .sched-date { font-size: 11px; color: var(--text-muted); font-weight: 600; min-width: 90px; }
 .sched-opp { font-size: 12px; color: #fff; font-weight: 700; flex: 1; }
 .sched-loc { font-size: 10px; color: var(--text-dim); font-weight: 500; }
-.sched-opp.round1-game { color: var(--suns-orange); }
+.sched-opp.current-game { color: var(--suns-orange); }
 
 /* FOOTER */
 .footer {
@@ -839,64 +831,44 @@ body {
       <span class="brand-tag">Ownership Intelligence</span>
     </div>
 
-    <!-- Elimination Banner -->
-    <div class="elim-banner">
-      <div class="elim-banner-text">⚠ NBA Play-In Tournament — Elimination Game</div>
-      <div class="elim-banner-sub">Loser is eliminated · Season ends tonight</div>
-    </div>
-
     <div class="matchup-header">
-      <div class="game-date">Friday, April 17, 2026</div>
+      <div class="game-date">Sunday, April 19, 2026</div>
       <div class="score-display">
         <div class="team-side">
           <div class="team-abbr">PHX</div>
-          <div class="team-record">45-37 · 7th West</div>
+          <div class="team-record">45-37 · #8 West</div>
         </div>
-        <div class="score-divider">VS</div>
+        <div class="score-divider">@</div>
         <div class="team-side">
-          <div class="team-abbr opp">GSW</div>
-          <div class="team-record">37-45 · 10th West</div>
+          <div class="team-abbr opp">OKC</div>
+          <div class="team-record">64-18 · #1 West</div>
         </div>
       </div>
       <div class="result-badge">PREGAME INTEL</div>
-      <div class="venue-info">10:00 PM ET · 7:00 PM MST</div>
-      <div class="venue-info streaming">Amazon Prime Video (streaming only)</div>
-      <div class="venue-info">Mortgage Matchup Center — Phoenix, AZ</div>
-    </div>
-  </div>
-
-  <!-- STAKES BOX -->
-  <div class="stakes-box">
-    <div class="stakes-row">
-      <div class="stakes-icon">✅</div>
-      <div class="stakes-label win-label">WIN</div>
-      <div class="stakes-desc"><strong>#8 Seed in NBA Playoffs</strong> → Face OKC Thunder (1st) in Round 1</div>
-    </div>
-    <div class="stakes-row">
-      <div class="stakes-icon">🚫</div>
-      <div class="stakes-label lose-label">LOSE</div>
-      <div class="stakes-desc"><strong>Season is OVER.</strong> Eliminated from playoffs. No second chances.</div>
+      <div class="venue-info">3:30 PM ET · 12:30 PM MST · ABC</div>
+      <div class="venue-info">Paycom Center — Oklahoma City, OK</div>
+      <div class="venue-info" style="color:var(--okc-blue);font-weight:600;">NBA Playoffs · Round 1 · Game 1</div>
     </div>
   </div>
 
   <!-- INFO CHIPS -->
   <div class="info-chips">
-    <span class="chip chip-spread">PHX -3.5 · O/U 219.5</span>
-    <span class="chip chip-elim">ELIMINATION GAME</span>
-    <span class="chip chip-injury">Porzingis QUES (ankle)</span>
-    <span class="chip chip-series">GSW leads series 3-1</span>
+    <span class="chip chip-spread">OKC -14.5 · O/U 215.5</span>
+    <span class="chip chip-playoff">ROUND 1 · GAME 1</span>
     <span class="chip chip-injury">Allen QUES (hamstring)</span>
+    <span class="chip chip-injury">M. Williams QUES (foot)</span>
+    <span class="chip chip-series">Green 36 pts in play-in</span>
   </div>
 
   <!-- WIN PROBABILITY BAR -->
   <div class="prob-bar-wrap">
     <div class="prob-label-row">
-      <span class="prob-label phx">PHX 64.8%</span>
-      <span class="prob-label opp">GSW 35.2%</span>
+      <span class="prob-label phx">PHX ~25%</span>
+      <span class="prob-label opp">OKC ~75%</span>
     </div>
     <div class="prob-bar">
-      <div class="prob-phx" style="width:64.8%"></div>
-      <div class="prob-opp" style="width:35.2%"></div>
+      <div class="prob-phx" style="width:25%"></div>
+      <div class="prob-opp" style="width:75%"></div>
     </div>
   </div>
 
@@ -913,13 +885,13 @@ body {
         <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="accordion-body">
-        <p class="exec-p">This is it. <span class="danger">One game. No margin.</span> The Phoenix Suns host the Golden State Warriors in the NBA Play-In Tournament elimination game — winner earns the 8th seed and a first-round date with the Oklahoma City Thunder, the top seed in the West. <span class="danger">Loser cleans out their locker and goes home.</span> After blowing a 7v8 shot on Tuesday, tonight is the only path left.</p>
+        <p class="exec-p">The Phoenix Suns have arrived. After fighting through two play-in games — including a dominant 111-96 win over Golden State on Friday where <span class="highlight">Jalen Green erupted for 36 points on 14-of-20 shooting</span> — Phoenix has earned the right to face the defending champion Oklahoma City Thunder. The Suns are alive, in rhythm, and carrying serious momentum into Paycom Center.</p>
 
-        <p class="exec-p">Tuesday's collapse against Portland still stings. The Suns led by 11 in the fourth quarter before <strong>Deni Avdija took over — posting 41 points</strong>, capping it with a go-ahead 3-point play with just 16.1 seconds on the clock. <strong>Devin Booker's 5-foul night</strong> limited his aggressiveness, and Jalen Green's potential tying 3 rimmed out at the buzzer. Tonight is the redemption game. The bounce-back or the burial.</p>
+        <p class="exec-p">The challenge is immense. OKC posted the <strong>NBA's best record (64-18)</strong>, best defense (107.7 DRTG, #1), and best net rating (+11.1). <strong>Shai Gilgeous-Alexander</strong> (31.1 PPG, 55.3% FG) has averaged 30 points on 50.9% shooting in five meetings against Phoenix this season. The Thunder are <span class="danger">14-point favorites</span> and -3000 in the series — the largest first-round spread of these playoffs. Every expert is picking OKC in 4 or 5.</p>
 
-        <p class="exec-p">Golden State arrives riding an emotional high. <strong>Steph Curry dropped 35 points in 36 minutes</strong> Wednesday against LAC, orchestrating a stunning 13-point fourth-quarter comeback. It was quintessential Curry playoff mode — but note he may be operating under a minute restriction after some ankle management. <span class="highlight">Kristaps Porzingis (20/5/5 in that game) is now questionable with ankle soreness from that effort.</span> His status is the single biggest injury wildcard tonight.</p>
+        <p class="exec-p">But there are cracks to exploit. <span class="highlight">OKC's 3-point defense ranks just 25th in the NBA</span>, and the Suns set a franchise record with 1,210 threes this season. Jalen Williams has been limited to 33 games and his shooting has dipped sharply. <strong>OKC has had a full 7 days of rest since April 12</strong> — rust is a real factor. And Jordan Goodwin's play-in performance (19 pts, 6 steals) showed Phoenix has the defensive identity to compete. The Suns enter as massive underdogs, but they enter with momentum and nothing to lose.</p>
 
-        <p class="exec-p">The math favors Phoenix: <span class="highlight">25-16 at Mortgage Matchup Center</span> this season, -3.5 favorites, 64.8% win probability. <strong>But GSW owns the season series 3-1</strong>, and the Suns' only win was a nail-biting 99-98 at home on December 18. Curry has made a career of erasing conventional wisdom in May. <span class="highlight">Home crowd, redemption fuel, and Jordan Ott's adjustments</span> give Phoenix the edge — but this is not a comfortable spot. Every possession tonight is a playoff possession.</p>
+        <p class="exec-p">The X-factor: <strong>Green did not play in any of the 5 regular-season games vs OKC.</strong> The Thunder have zero film on what he looks like at full speed. After 36 points against Golden State, he arrives as the most dangerous unknown in this series. That's a genuine edge. The Suns don't need to win the series today — they need to show OKC this will not be a walkover.</p>
       </div>
     </div>
 
@@ -928,32 +900,32 @@ body {
       <div class="accordion-header" onclick="toggleAccordion('sec-league')">
         <div class="accordion-title">
           <span class="accordion-icon">🌐</span>
-          <span class="accordion-label">Play-In Context &amp; League Landscape</span>
+          <span class="accordion-label">Playoff Day 1 — League Landscape</span>
         </div>
         <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="accordion-body">
         <div class="league-bullet">
+          <div class="league-dot" style="background:var(--win)"></div>
+          <div class="league-text"><strong>CLE 126, TOR 113</strong> — Mitchell 32 pts; Harden 22 pts/10 AST. Cavs shot 55% FG, 16-32 from three. All four higher seeds won on Day 1. Home court is holding across the board — the expected order is playing out. OKC enters Day 2 as the favorites' favorite.</div>
+        </div>
+        <div class="league-bullet">
+          <div class="league-dot" style="background:var(--win)"></div>
+          <div class="league-text"><strong>DEN 116, MIN 105</strong> — Jokic triple-double (25/13/11); Murray 30 pts. Edwards was limited. The defending champs from 2023 showing they're still dangerous — and Jokic is still Jokic in the playoffs. Nuggets lead 1-0.</div>
+        </div>
+        <div class="league-bullet">
+          <div class="league-dot" style="background:var(--win)"></div>
+          <div class="league-text"><strong>LAL 107, HOU 98</strong> — LeBron 19 pts/13 AST; Kennard 27 pts (5-for-5 from three). Both Luka and Reaves sat for LAL; KD sat for Houston — a short-handed team still won by playing team defense. <strong>That is the blueprint for today.</strong> PHX doesn't need stars to carry them — they need 5-man execution.</div>
+        </div>
+        <div class="league-bullet">
+          <div class="league-dot" style="background:var(--win)"></div>
+          <div class="league-text"><strong>NYK 113, ATL 102</strong> — KAT 25 pts (19 in 2nd half); Hart 14 REB. Knicks defending home court as expected. Takeaway across all Day 1 games: the home team has been physical, disciplined, and purposeful. OKC will bring that same energy today.</div>
+        </div>
+        <div class="league-bullet">
           <div class="league-dot"></div>
-          <div class="league-text"><strong>Tonight is the final Play-In game.</strong> PHX vs GSW is the Western Conference elimination game — the last team standing earns the 8 seed. The East's final spot is also decided tonight: Charlotte Hornets vs Orlando Magic. Round 1 begins Saturday, April 18.</div>
+          <div class="league-text"><strong>Rest edge belongs to OKC.</strong> PHX played Friday (2 days ago) — the Thunder haven't played since April 12 (7 full days). History shows teams with 5+ days rest in Round 1 can start slow. Watch OKC's first-quarter body language — their legs may not be fully alive. PHX's play-in momentum is a real counter to OKC's structural rest advantage.</div>
         </div>
-        <div class="league-bullet">
-          <div class="league-dot" style="background:var(--loss)"></div>
-          <div class="league-text"><strong>PHX fell to POR 114-110 on Tuesday (7v8 game).</strong> The Suns blew an 11-point 4Q lead. Avdija dropped 41. That loss dropped Phoenix into tonight's elimination bracket — meaning the Suns must now win back-to-back Play-In games to advance, while Portland gets a reward game for the 7-seed. Tuesday's pain is tonight's fuel.</div>
-        </div>
-        <div class="league-bullet">
-          <div class="league-dot" style="background:var(--gsw-gold)"></div>
-          <div class="league-text"><strong>GSW beat LAC 126-121 Wednesday (9v10 game).</strong> Curry's 35-point performance — overcoming a 13-point 4th quarter deficit — is the defining moment of this Play-In. Warriors arrive with momentum. They also arrive one game fresher than Phoenix's Tuesday defeat.</div>
-        </div>
-        <div class="league-bullet">
-          <div class="league-dot" style="background:var(--purple)"></div>
-          <div class="league-text"><strong>Eastern Conference context: ORL beat CHA (Wed), IND beat ATL (Tue).</strong> Indiana earned the 7-seed, Orlando the 8-seed in the East. The West's 8-seed winner tonight faces OKC (1st) — arguably the toughest possible first-round matchup for the 8-seed in either conference.</div>
-        </div>
-        <div class="league-bullet">
-          <div class="league-dot" style="background:var(--blue)"></div>
-          <div class="league-text"><strong>OKC Thunder (1st seed) is waiting.</strong> The Thunder are rested and ready. Whoever survives tonight faces them Saturday in Round 1. A deep Phoenix run starts by surviving this first — nothing else matters until the final buzzer tonight.</div>
-        </div>
-        <div class="section-note">Play-In results from Ball Don't Lie API and verified reporting. Tonight's game is the final Play-In game of the 2025-26 season.</div>
+        <div class="section-note">Playoff Day 1 results from NBA.com. PHX vs OKC tips today at 3:30 PM ET on ABC.</div>
       </div>
     </div>
 
@@ -971,41 +943,27 @@ body {
         <div class="injury-row">
           <span class="injury-name">Grayson Allen</span>
           <span class="injury-badge questionable">Questionable</span>
-          <span class="injury-reason">Left hamstring soreness</span>
+          <span class="injury-reason">Left hamstring strain — missed both play-in games</span>
         </div>
         <div class="injury-row">
           <span class="injury-name">Mark Williams</span>
           <span class="injury-badge questionable">Questionable</span>
-          <span class="injury-reason">Foot</span>
+          <span class="injury-reason">Left foot soreness (stress reaction) — missed GSW play-in game</span>
         </div>
 
-        <div class="injury-team-label" style="margin-top:16px;">Golden State Warriors</div>
+        <div class="injury-team-label" style="margin-top:16px;">Oklahoma City Thunder</div>
         <div class="injury-row">
-          <span class="injury-name">Kristaps Porzingis</span>
-          <span class="injury-badge questionable">Questionable</span>
-          <span class="injury-reason">Right ankle — limping postgame vs LAC</span>
-        </div>
-        <div class="injury-row">
-          <span class="injury-name">Quinten Post</span>
+          <span class="injury-name">Thomas Sorber</span>
           <span class="injury-badge out">OUT</span>
-          <span class="injury-reason">Foot</span>
+          <span class="injury-reason">Right ACL (surgery) — rookie, season-ending, has not played</span>
         </div>
-        <div class="injury-row">
-          <span class="injury-name">Jimmy Butler</span>
-          <span class="injury-badge out">OUT</span>
-          <span class="injury-reason">Knee (season-ending)</span>
+
+        <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:var(--radius-sm);padding:10px 12px;margin-top:12px;">
+          <div style="font-size:10px;font-weight:700;color:var(--win);margin-bottom:4px;letter-spacing:0.5px;">ALL OTHER KEY PLAYERS AVAILABLE</div>
+          <div style="font-size:11px;color:var(--text-muted);line-height:1.55;">PHX: Booker, Green, Brooks, Goodwin, O'Neale, Dunn, Ighodaro — all confirmed active. OKC: SGA, Holmgren, J. Williams, Caruso, Dort, Hartenstein, Wallace, Mitchell, Joe — all active.</div>
         </div>
-        <div class="injury-row">
-          <span class="injury-name">Moses Moody</span>
-          <span class="injury-badge out">OUT</span>
-          <span class="injury-reason">Knee (season-ending)</span>
-        </div>
-        <div class="injury-row">
-          <span class="injury-name">LJ Cryer</span>
-          <span class="injury-badge out">OUT</span>
-          <span class="injury-reason">Ankle (season-ending)</span>
-        </div>
-        <div class="section-note">Injury report reflects information available at time of build. Official NBA game-day report typically finalized by 1:30 PM ET. Monitor for late updates on Allen, Williams, and Porzingis — all three are elimination-game wildcards.</div>
+
+        <div class="section-note">Impact: If Allen and M. Williams both sit, PHX loses its starting center and a key spacing guard. Ighodaro starts at center vs. Holmgren — a significant matchup disadvantage. Monitor the official 1:30 PM ET game-day report. Coach Ott: "We're waiting for inflammation to calm down" (re: Williams).</div>
       </div>
     </div>
 
@@ -1015,6 +973,7 @@ body {
         <div class="accordion-title">
           <span class="accordion-icon">☀️</span>
           <span class="accordion-label">Suns Key Players</span>
+        <span style="font-size:11px;color:#666680;margin-left:8px;">HC: Jordan Ott</span>
         </div>
         <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
@@ -1023,10 +982,19 @@ body {
         <div class="player-card">
           <div class="player-header">
             <span class="player-name">Devin Booker</span>
-            <span class="player-role">SG · #1</span>
+            <span class="player-role">G · #1</span>
           </div>
-          <div class="player-stats">26.0 PPG · 3.8 RPG · 6.0 APG · 45.5% FG · 32.8% 3P</div>
-          <div class="player-note"><strong>The key question:</strong> Can Booker play 35+ minutes without fouling out? He picked up 5 fouls vs Portland Tuesday, which neutralized him in the 4Q collapse. In an elimination game, his aggression is non-negotiable — but so is discipline. Needs to drive, create, and close without giving Draymond cheap foul opportunities.</div>
+          <div class="player-stats">25.9 PPG · 3.9 RPG · 6.0 APG · 45.5% FG · 32.4% 3P · 86.9% FT · 66 GP</div>
+          <div class="player-note"><strong>The anchor.</strong> Only played in 2 of 5 regular-season games vs OKC. Lu Dort will be his primary defender — Booker has shot 71.9% True Shooting against Dort historically, but the Thunder rotate bodies at him aggressively. His ability to create for others when his shot isn't falling will define PHX's offensive ceiling. Foul discipline is critical — can't afford early foul trouble vs. a team that gets to the line at the league's 4th-highest rate.</div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-header">
+            <span class="player-name">Jalen Green</span>
+            <span class="player-role">G · #4</span>
+          </div>
+          <div class="player-stats">18.8 PPG · 3.7 RPG · 2.9 APG · 43.5% FG · 32.7% 3P · 34 GP</div>
+          <div class="player-note"><strong>The unknown variable — and PHX's biggest edge.</strong> Scored 36 pts (14-20 FG, 8-14 3PT) in the play-in win over GSW. Did NOT play in any of the 5 regular-season games vs OKC — the Thunder have zero film on him in this matchup. Cason Wallace held Green to 6 pts per 75 possessions historically, but this Green is a different player. If he replicates Friday's output, the series changes.</div>
         </div>
 
         <div class="player-card">
@@ -1034,62 +1002,8 @@ body {
             <span class="player-name">Dillon Brooks</span>
             <span class="player-role">SF · #0</span>
           </div>
-          <div class="player-stats">20.2 PPG · 3.7 RPG · 1.8 APG · 43.7% FG · 34.6% 3P · 1.1 STL</div>
-          <div class="player-note">Phoenix's enforcer and second scorer. Defensively, Brooks will likely draw the assignment of chasing Curry off screens — his physicality is essential. On the other end, his ability to manufacture points in mid-range and off the drive takes pressure off Booker.</div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-header">
-            <span class="player-name">Jalen Green</span>
-            <span class="player-role">SG · #4</span>
-          </div>
-          <div class="player-stats">18.3 PPG · 3.7 RPG · 2.8 APG · 42.5% FG · 31.2% 3P</div>
-          <div class="player-note">Green missed the potential game-tying 3 at the buzzer on Tuesday. He will want this moment badly. His explosiveness off the bounce can exploit GSW's perimeter defense, especially if Curry is on a minute restriction. <strong>Redemption is the word for Jalen tonight.</strong></div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-header">
-            <span class="player-name">Grayson Allen <span class="player-status-flag">QUES</span></span>
-            <span class="player-role">SG/SF · #8</span>
-          </div>
-          <div class="player-stats">16.5 PPG · 3.0 RPG · 3.8 APG · 40.3% FG · 34.9% 3P · 1.4 STL</div>
-          <div class="player-note">Left hamstring soreness has him listed questionable. Allen's 3-point shooting and defensive tenacity — leading the team with 1.4 STL/game — would be a significant loss in an elimination game. If he's out, the Suns lose a reliable off-ball threat and defender.</div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-header">
-            <span class="player-name">Collin Gillespie</span>
-            <span class="player-role">PG · #2</span>
-          </div>
-          <div class="player-stats">12.6 PPG · 4.1 RPG · 4.6 APG · 41.7% FG · 40.1% 3P · 81 GP</div>
-          <div class="player-note">The Suns' most durable player this season (81 games). Gillespie's 40.1% from three is elite, and his playmaking steadiness gives Jordan Ott a reliable backup ball-handler. If Allen is out, Gillespie takes on a larger role and his floor spacing becomes even more critical.</div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-header">
-            <span class="player-name">Mark Williams <span class="player-status-flag">QUES</span></span>
-            <span class="player-role">C · #5</span>
-          </div>
-          <div class="player-stats">11.5 PPG · 7.9 RPG · 64.3% FG · 1.0 BLK</div>
-          <div class="player-note">Questionable (foot). Williams at 64.3% FG is a lob threat and rim protector — the Suns' most efficient scorer per attempt. His presence is important against Al Horford and Draymond. If he can't go, Oso Ighodaro starts and the Suns lose rim protection depth.</div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-header">
-            <span class="player-name">Royce O'Neale</span>
-            <span class="player-role">SF · #00</span>
-          </div>
-          <div class="player-stats">9.8 PPG · 4.8 RPG · 2.7 APG · 42.2% FG · 40.7% 3P</div>
-          <div class="player-note">One of the most underrated pieces on this roster. O'Neale's 40.7% from three and switchable defense give Ott a versatile two-way option off the bench. His spacing helps open the lane for Booker and Green drives.</div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-header">
-            <span class="player-name">Oso Ighodaro</span>
-            <span class="player-role">C · #13</span>
-          </div>
-          <div class="player-stats">6.4 PPG · 5.0 RPG · 2.3 APG · 65.2% FG · 0.7 BLK · 83 GP</div>
-          <div class="player-note">The Suns' ironman — all 83 games played. If Mark Williams sits, Ighodaro becomes the starting center. His 65.2% FG and passing vision from the post give Phoenix a different dimension, though he lacks Williams' rim protection. His ability to play-make from the short roll is critical against Draymond's switching defense.</div>
+          <div class="player-stats">20.1 PPG · 3.6 RPG · 1.8 APG · 43.4% FG · 34.6% 3P · 58 GP</div>
+          <div class="player-note"><strong>Canadian vs. Canadian — the personal edge.</strong> Brooks will likely draw the primary SGA defensive assignment. He's publicly claimed the "best player" title. He has the physicality and competitive wiring to be a genuine disruptor on SGA, and his 20.1 PPG makes him a legitimate second scorer. The energy he brings in the opening possessions will set the tone.</div>
         </div>
 
         <div class="player-card">
@@ -1097,8 +1011,35 @@ body {
             <span class="player-name">Jordan Goodwin</span>
             <span class="player-role">G · #0</span>
           </div>
-          <div class="player-stats">8.7 PPG · 4.9 RPG · 2.1 APG · 41.5% FG · 37.3% 3P · 1.5 STL</div>
-          <div class="player-note">Goodwin was the one who drove for the go-ahead layup with 32 seconds left on Tuesday — before Avdija's response. His energy and defensive hustle (team-best 1.5 STL) give Ott a spark plug option. A reliable role player who may see bigger minutes if Allen is out.</div>
+          <div class="player-stats">8.9 PPG · 4.9 RPG · 2.1 APG · 1.6 SPG · 37.8% 3P · 72 GP</div>
+          <div class="player-note"><strong>Majerle Hustle Award winner.</strong> Had 19 pts, 9 reb, 6 steals in the play-in win over GSW — the defensive performance of the night. His 1.6 steals per game is the team-best, and his energy sets the defensive identity this team needs to sustain. PHX forced 3rd-most turnovers in the NBA this season — Goodwin is why.</div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-header">
+            <span class="player-name">Grayson Allen <span class="player-status-flag">QUES</span></span>
+            <span class="player-role">G · #8</span>
+          </div>
+          <div class="player-stats">16.5 PPG · 3.0 RPG · 3.8 APG · 40.3% FG · 34.9% 3P · 51 GP</div>
+          <div class="player-note">Left hamstring strain has him questionable — missed both play-in games. If Allen plays, he's a critical spacing piece at 34.9% from three and adds 1.4 STL. His availability significantly raises Phoenix's floor. If he sits, the bench rotation shrinks and Ott must do more with less.</div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-header">
+            <span class="player-name">Mark Williams <span class="player-status-flag">QUES</span></span>
+            <span class="player-role">C · #5</span>
+          </div>
+          <div class="player-stats">11.5 PPG · 7.9 RPG · 1.0 APG · 1.0 BPG · 64.3% FG · 61 GP</div>
+          <div class="player-note">Questionable (left foot stress reaction). Starting center — if he plays, provides rim protection and lob threat against Holmgren. His 64.3% FG is the team's most efficient scoring option. If out, Ighodaro starts and the Holmgren matchup becomes a significant size disadvantage. These two injury decisions reshape the entire game plan.</div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-header">
+            <span class="player-name">Royce O'Neale</span>
+            <span class="player-role">F · #00</span>
+          </div>
+          <div class="player-stats">9.8 PPG · 4.8 RPG · 2.6 APG · 1.1 SPG · 40.5% 3P · 80 GP</div>
+          <div class="player-note">Elite floor spacer at 40.5% from three on high volume. Switchable two-way piece who gives Ott defensive versatility. His spacing opens the lane for Booker and Green drives against a long OKC defense.</div>
         </div>
 
       </div>
@@ -1109,8 +1050,8 @@ body {
       <div class="accordion-header" onclick="toggleAccordion('sec-opp-players')">
         <div class="accordion-title">
           <span class="accordion-icon">🆚</span>
-          <span class="accordion-label">Warriors Key Players</span>
-        <span class="accordion-subtitle" style="font-size:11px;color:#666680;margin-left:8px;">HC: Steve Kerr</span>
+          <span class="accordion-label">Thunder Key Players</span>
+        <span style="font-size:11px;color:#666680;margin-left:8px;">HC: Mark Daigneault</span>
         </div>
         <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
@@ -1118,56 +1059,56 @@ body {
 
         <div class="player-card">
           <div class="player-header">
-            <span class="player-name">Stephen Curry</span>
-            <span class="player-role">PG · #30</span>
+            <span class="player-name">Shai Gilgeous-Alexander</span>
+            <span class="player-role">G · #2</span>
           </div>
-          <div class="player-stats opp-stats">26.8 PPG · 3.5 RPG · 4.7 APG · 47.0% FG · 39.7% 3P · 44 GP</div>
-          <div class="player-note"><strong>The danger.</strong> Curry dropped 35 in 36 minutes Wednesday — overcoming a 13-point 4Q deficit vs LAC — in one of the great Play-In individual performances. May be on a minute restriction due to ankle management. The Suns must contest every catch-and-shoot opportunity: he shoots 39.7% from three and has 4.4 makes per game. There is no safe distance from Steph.</div>
+          <div class="player-stats opp-stats">31.1 PPG · 4.3 RPG · 6.6 APG · 1.4 SPG · 55.3% FG · 38.6% 3P · 87.9% FT · 68 GP</div>
+          <div class="player-note"><strong>The primary threat — and one of the best players alive.</strong> MVP candidate. Against PHX this season: 30 PPG, 50.9% FG. When SGA is on the floor, OKC's ORTG is +19.1 vs. off. His midrange game is essentially unguardable — he gets to his spot and converts at an elite rate. Brooks will make it physical but will need constant help. This is the #1 defensive challenge of the entire game.</div>
         </div>
 
         <div class="player-card">
           <div class="player-header">
-            <span class="player-name">Brandin Podziemski</span>
+            <span class="player-name">Chet Holmgren</span>
+            <span class="player-role">C/F · #7</span>
+          </div>
+          <div class="player-stats opp-stats">17.1 PPG · 8.9 RPG · 1.7 APG · 1.9 BPG · 55.7% FG · 36.2% 3P · 69 GP</div>
+          <div class="player-note"><strong>7 feet of matchup nightmare.</strong> Blocks shots AND hits threes — a combination that creates massive problems in the paint and at the arc simultaneously. If M. Williams is out and Ighodaro starts, the size/shot-blocking mismatch becomes the most exploitable advantage OKC has. PHX must limit him to one shot per possession — he converts at 55.7%.</div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-header">
+            <span class="player-name">Jalen Williams</span>
+            <span class="player-role">G/F · #8</span>
+          </div>
+          <div class="player-stats opp-stats">17.1 PPG · 4.6 RPG · 5.5 APG · 1.2 SPG · 48.4% FG · 29.9% 3P · 33 GP</div>
+          <div class="player-note"><strong>The watch item.</strong> When healthy, All-NBA caliber third star. But only 33 games this season (wrist surgery, hamstring). His shooting has dipped sharply — 29.9% from three is a significant drop. If he's right, OKC has three 17+ PPG scorers and PHX has no defensive answer. If he's limited, PHX's best path is to exploit his role player coverage and make OKC rely on SGA + Holmgren to carry the load.</div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-header">
+            <span class="player-name">Ajay Mitchell</span>
+            <span class="player-role">G · #5</span>
+          </div>
+          <div class="player-stats opp-stats">13.6 PPG · 3.3 RPG · 3.6 APG · 1.2 SPG · 48.5% FG · 34.7% 3P · 57 GP</div>
+          <div class="player-note">Breakout bench weapon. Quick decision-maker, iso creator, and OKC's depth advantage in a nutshell. His 48.5% FG makes him a difficult cover off the bench — when PHX's second unit is on the floor, Mitchell can create advantages. The depth differential in this series runs through him.</div>
+        </div>
+
+        <div class="player-card">
+          <div class="player-header">
+            <span class="player-name">Isaiah Joe</span>
             <span class="player-role">G · #11</span>
           </div>
-          <div class="player-stats opp-stats">19.4 PPG · 3.2 RPG · 8.1 APG · 41.0% FG · 23.5% 3P · 20 GP</div>
-          <div class="player-note">Limited to 20 games this season due to injury, but when healthy he's a significant secondary playmaker for GSW with 8.1 APG. His 23.5% from three is not a threat, but his paint attacks and passing create for others. Watch his health carefully — he's been coming back from limited availability.</div>
+          <div class="player-stats opp-stats">11.1 PPG · 2.5 RPG · 1.3 APG · 42.3% 3P (181 made) · 71 GP</div>
+          <div class="player-note">Elite spot-up shooter. 42.3% from three on 428 attempts — one of the most accurate three-point shooters in the league this season. PHX cannot leave him open for a breath. Any defensive rotation mistake in the perimeter will result in a made three.</div>
         </div>
 
         <div class="player-card">
           <div class="player-header">
-            <span class="player-name">Kristaps Porzingis <span class="player-status-flag">QUES</span></span>
-            <span class="player-role">C/PF · #8</span>
+            <span class="player-name">Lu Dort</span>
+            <span class="player-role">G/F · #5</span>
           </div>
-          <div class="player-stats opp-stats">16.8 PPG · 5.2 RPG · 2.6 APG · 45.3% FG · 34.3% 3P · 1.2 BLK</div>
-          <div class="player-note"><strong>The pivotal wildcard.</strong> Porzingis posted 20/5/5 in Wednesday's comeback, then was seen limping postgame. His right ankle status is the most important pregame storyline for PHX. A healthy Porzingis stretches the floor, blocks shots, and gives Curry a capable co-star. An absent or limited Porzingis is a massive GSW downgrade.</div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-header">
-            <span class="player-name">Gui Santos</span>
-            <span class="player-role">SF · #13</span>
-          </div>
-          <div class="player-stats opp-stats">13.9 PPG · 5.1 RPG · 3.7 APG · 45.5% FG · 37.0% 3P · 83 GP</div>
-          <div class="player-note">The Warriors' most durable player and an underrated two-way contributor. Santos at 45.5% FG and 37.0% from three is a legitimate perimeter threat who can play 4 if needed. PHX cannot leave him open — he will punish it.</div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-header">
-            <span class="player-name">Draymond Green</span>
-            <span class="player-role">PF · #23</span>
-          </div>
-          <div class="player-stats opp-stats">8.4 PPG · 5.5 RPG · 5.6 APG · 41.9% FG · 32.6% 3P</div>
-          <div class="player-note"><strong>The orchestrator.</strong> Draymond doesn't show in the stat sheet the way he shows on the court. His defensive versatility — guarding multiple positions, making help rotations, drawing charges — was on full display Wednesday. Against Booker and Green, he will create foul bait and contest everything. Watch for his effect on Booker's foul accumulation.</div>
-        </div>
-
-        <div class="player-card">
-          <div class="player-header">
-            <span class="player-name">Al Horford</span>
-            <span class="player-role">C · #42</span>
-          </div>
-          <div class="player-stats opp-stats">8.4 PPG · 4.8 RPG · 2.5 APG · 43.1% FG · 36.8% 3P · 1.1 BLK</div>
-          <div class="player-note">Veteran big who stretches the floor with 36.8% from three. Horford's playoff experience and low-error decision making make him a reliable GSW option. PHX must respect him on pick-and-pop coverages — he has range.</div>
+          <div class="player-stats opp-stats">8.3 PPG · 3.6 RPG · 0.9 SPG · 34.4% 3P · 69 GP</div>
+          <div class="player-note"><strong>The Booker problem.</strong> Relentless on-ball defender who will draw the Devin Booker assignment. Physical, suffocating, and never lets his man off the hook. Booker has historically shot 71.9% True Shooting against Dort — but that's over a full season. In playoff intensity with help from Cason Wallace and SGA rotations, this will be Booker's most demanding defensive assignment of the year.</div>
         </div>
 
       </div>
@@ -1186,51 +1127,76 @@ body {
         <div class="comp-header-row">
           <span class="comp-team-name phx">PHX Suns</span>
           <span class="stat-label" style="font-size:10px;color:var(--text-dim)">STAT</span>
-          <span class="comp-team-name opp">GSW Warriors</span>
+          <span class="comp-team-name opp">OKC Thunder</span>
         </div>
 
         <div class="stat-compare-row">
-          <div class="stat-val-left stat-winner">112.9</div>
+          <div class="stat-val-left">112.5</div>
           <div class="stat-label">Pts Per Game</div>
-          <div class="stat-val-right">114.6</div>
+          <div class="stat-val-right stat-winner">119.0</div>
         </div>
         <div class="stat-compare-row">
-          <div class="stat-val-left stat-winner">111.4</div>
+          <div class="stat-val-left stat-winner">111.0</div>
           <div class="stat-label">Opp Pts Per Game</div>
-          <div class="stat-val-right">115.2</div>
+          <div class="stat-val-right">107.9</div>
         </div>
         <div class="stat-compare-row">
-          <div class="stat-val-left stat-winner">45.4%</div>
-          <div class="stat-label">FG%</div>
-          <div class="stat-val-right">—</div>
+          <div class="stat-val-left">+1.6</div>
+          <div class="stat-label">Net Rating</div>
+          <div class="stat-val-right stat-winner">+11.1</div>
         </div>
         <div class="stat-compare-row">
-          <div class="stat-val-left stat-winner">36.3%</div>
-          <div class="stat-label">3PT%</div>
-          <div class="stat-val-right">—</div>
+          <div class="stat-val-left">53.8%</div>
+          <div class="stat-label">Eff FG%</div>
+          <div class="stat-val-right stat-winner">56.1%</div>
         </div>
         <div class="stat-compare-row">
-          <div class="stat-val-left">—</div>
-          <div class="stat-label">3PM per Game</div>
-          <div class="stat-val-right stat-winner">15.7 (2nd NBA)</div>
+          <div class="stat-val-left stat-winner">54.1%</div>
+          <div class="stat-label">Opp Eff FG%</div>
+          <div class="stat-val-right">51.9%</div>
         </div>
         <div class="stat-compare-row">
-          <div class="stat-val-left stat-winner">T-1st NBA</div>
-          <div class="stat-label">3P Defense %</div>
-          <div class="stat-val-right">—</div>
+          <div class="stat-val-left">24.6</div>
+          <div class="stat-label">Assists/G</div>
+          <div class="stat-val-right stat-winner">25.8</div>
         </div>
         <div class="stat-compare-row">
-          <div class="stat-val-left stat-winner">25-16</div>
-          <div class="stat-label">Home / Road Record</div>
-          <div class="stat-val-right">15-26</div>
+          <div class="stat-val-left">51.8</div>
+          <div class="stat-label">Rebounds/G</div>
+          <div class="stat-val-right stat-winner">51.9</div>
+        </div>
+        <div class="stat-compare-row">
+          <div class="stat-val-left">9.6</div>
+          <div class="stat-label">Steals/G</div>
+          <div class="stat-val-right stat-winner">9.7</div>
+        </div>
+        <div class="stat-compare-row">
+          <div class="stat-val-left">4.3</div>
+          <div class="stat-label">Blocks/G</div>
+          <div class="stat-val-right stat-winner">5.5</div>
+        </div>
+        <div class="stat-compare-row">
+          <div class="stat-val-left">42.9</div>
+          <div class="stat-label">Pts in Paint/G</div>
+          <div class="stat-val-right stat-winner">49.3</div>
+        </div>
+        <div class="stat-compare-row">
+          <div class="stat-val-left stat-winner">28.8%</div>
+          <div class="stat-label">Off Reb%</div>
+          <div class="stat-val-right">22.3%</div>
+        </div>
+        <div class="stat-compare-row">
+          <div class="stat-val-left stat-winner">25th NBA</div>
+          <div class="stat-label">Opp 3PT Defense</div>
+          <div class="stat-val-right">PHX ADVANTAGE</div>
         </div>
         <div class="stat-compare-row">
           <div class="stat-val-left">45-37</div>
           <div class="stat-label">Overall Record</div>
-          <div class="stat-val-right">37-45</div>
+          <div class="stat-val-right stat-winner">64-18</div>
         </div>
 
-        <div class="section-note">PHX defensive stats from season aggregate. GSW's 3PM/G (15.7, 2nd NBA) driven heavily by Curry (4.4 3PM/G). PHX's T-1st NBA 3P defense is the most critical head-to-head edge to monitor.</div>
+        <div class="section-note">Stats from TeamRankings.com, 2025-26 regular season. OKC's 3PT defense (25th NBA) is Phoenix's primary structural exploit — the Suns set a franchise record with 1,210 threes this season. PHX off-reb% advantage is notable in a series where second-chance points could be equalizers.</div>
       </div>
     </div>
 
@@ -1247,134 +1213,134 @@ body {
         <div class="hustle-header-row">
           <span class="hustle-team-label phx">PHX</span>
           <span style="font-size:10px;color:var(--text-dim);font-weight:600;">CATEGORY</span>
-          <span class="hustle-team-label opp">GSW</span>
+          <span class="hustle-team-label opp">OKC</span>
         </div>
 
-        <!-- Deflections: PHX 14.2 (#8), GSW 13.1 (#18) — PHX wins -->
-        <!-- Bar widths: PHX = 14.2/(14.2+13.1)*100 = 52.0%, GSW = 48.0% -->
+        <!-- Deflections: PHX 20.2 (#4), OKC 20.6 (#1) — OKC wins -->
+        <!-- Bar widths: OKC = 20.6/(20.2+20.6)*100 = 50.5%, PHX = 49.5% -->
         <div class="hustle-row">
           <div style="text-align:right;min-width:38px;">
-            <div class="hustle-val winner">14.2</div>
-            <div class="hustle-rank top10">#8</div>
+            <div class="hustle-val loser">20.2</div>
+            <div class="hustle-rank top5">#4</div>
           </div>
           <div class="hustle-cat">
             <div class="hustle-cat-name">Deflections</div>
             <div class="hustle-bar-wrap">
-              <div class="hustle-bar left bar-winner" style="width:52%"></div>
-              <div class="hustle-bar right bar-loser" style="width:48%"></div>
+              <div class="hustle-bar left bar-loser" style="width:49.5%"></div>
+              <div class="hustle-bar right bar-opp-winner" style="width:50.5%"></div>
             </div>
           </div>
           <div style="text-align:left;min-width:38px;">
-            <div class="hustle-val loser">13.1</div>
-            <div class="hustle-rank mid">#18</div>
+            <div class="hustle-val opp-winner">20.6</div>
+            <div class="hustle-rank top5" style="background:rgba(0,122,193,0.12);color:var(--okc-blue)">#1</div>
           </div>
         </div>
 
-        <!-- Contested Shots: PHX 52.8 (#6), GSW 49.5 (#22) — PHX wins -->
-        <!-- Bar widths: PHX = 52.8/(52.8+49.5)*100 = 51.6%, GSW = 48.4% -->
+        <!-- Loose Balls: PHX 5.8 (#5), OKC 5.9 (#2) — OKC wins -->
+        <!-- Bar widths: OKC = 5.9/(5.8+5.9)*100 = 50.4%, PHX = 49.6% -->
         <div class="hustle-row">
           <div style="text-align:right;min-width:38px;">
-            <div class="hustle-val winner">52.8</div>
-            <div class="hustle-rank top10">#6</div>
-          </div>
-          <div class="hustle-cat">
-            <div class="hustle-cat-name">Contested Shots</div>
-            <div class="hustle-bar-wrap">
-              <div class="hustle-bar left bar-winner" style="width:52%"></div>
-              <div class="hustle-bar right bar-loser" style="width:48%"></div>
-            </div>
-          </div>
-          <div style="text-align:left;min-width:38px;">
-            <div class="hustle-val loser">49.5</div>
-            <div class="hustle-rank bottom10">#22</div>
-          </div>
-        </div>
-
-        <!-- Contested 2PT: PHX 31.2 (#5), GSW 28.2 (#23) — PHX wins -->
-        <!-- Bar widths: PHX = 31.2/(31.2+28.2)*100 = 52.5%, GSW = 47.5% -->
-        <div class="hustle-row">
-          <div style="text-align:right;min-width:38px;">
-            <div class="hustle-val winner">31.2</div>
+            <div class="hustle-val loser">5.8</div>
             <div class="hustle-rank top5">#5</div>
-          </div>
-          <div class="hustle-cat">
-            <div class="hustle-cat-name">Contested 2PT</div>
-            <div class="hustle-bar-wrap">
-              <div class="hustle-bar left bar-winner" style="width:53%"></div>
-              <div class="hustle-bar right bar-loser" style="width:47%"></div>
-            </div>
-          </div>
-          <div style="text-align:left;min-width:38px;">
-            <div class="hustle-val loser">28.2</div>
-            <div class="hustle-rank bottom10">#23</div>
-          </div>
-        </div>
-
-        <!-- Loose Balls: PHX 4.8 (#10), GSW 4.5 (#14) — PHX wins -->
-        <!-- Bar widths: PHX = 4.8/(4.8+4.5)*100 = 51.6%, GSW = 48.4% -->
-        <div class="hustle-row">
-          <div style="text-align:right;min-width:38px;">
-            <div class="hustle-val winner">4.8</div>
-            <div class="hustle-rank top10">#10</div>
           </div>
           <div class="hustle-cat">
             <div class="hustle-cat-name">Loose Balls</div>
             <div class="hustle-bar-wrap">
-              <div class="hustle-bar left bar-winner" style="width:52%"></div>
-              <div class="hustle-bar right bar-loser" style="width:48%"></div>
+              <div class="hustle-bar left bar-loser" style="width:49.6%"></div>
+              <div class="hustle-bar right bar-opp-winner" style="width:50.4%"></div>
             </div>
           </div>
           <div style="text-align:left;min-width:38px;">
-            <div class="hustle-val loser">4.5</div>
-            <div class="hustle-rank mid">#14</div>
+            <div class="hustle-val opp-winner">5.9</div>
+            <div class="hustle-rank top5" style="background:rgba(0,122,193,0.12);color:var(--okc-blue)">#2</div>
           </div>
         </div>
 
-        <!-- Screen Assists: PHX 12.4 (#12), GSW 13.8 (#5) — GSW wins -->
-        <!-- Bar widths: GSW = 13.8/(12.4+13.8)*100 = 52.7%, PHX = 47.3% -->
+        <!-- Contested Shots: PHX Top-5, OKC Top-3 — OKC wins (slight) -->
+        <!-- Use representative values: PHX ~52, OKC ~54 — OKC 50.9%, PHX 49.1% -->
         <div class="hustle-row">
           <div style="text-align:right;min-width:38px;">
-            <div class="hustle-val loser">12.4</div>
-            <div class="hustle-rank mid">#12</div>
+            <div class="hustle-val loser">Top-5</div>
+            <div class="hustle-rank top5">#5</div>
           </div>
           <div class="hustle-cat">
-            <div class="hustle-cat-name">Screen Assists</div>
+            <div class="hustle-cat-name">Contested Shots</div>
+            <div class="hustle-bar-wrap">
+              <div class="hustle-bar left bar-loser" style="width:49%"></div>
+              <div class="hustle-bar right bar-opp-winner" style="width:51%"></div>
+            </div>
+          </div>
+          <div style="text-align:left;min-width:38px;">
+            <div class="hustle-val opp-winner">Top-3</div>
+            <div class="hustle-rank top5" style="background:rgba(0,122,193,0.12);color:var(--okc-blue)">#3</div>
+          </div>
+        </div>
+
+        <!-- Contested 2PT: PHX Top-8, OKC Top-2 — OKC wins -->
+        <!-- Bar: PHX 47%, OKC 53% -->
+        <div class="hustle-row">
+          <div style="text-align:right;min-width:38px;">
+            <div class="hustle-val loser">Top-8</div>
+            <div class="hustle-rank top10">#8</div>
+          </div>
+          <div class="hustle-cat">
+            <div class="hustle-cat-name">Contested 2PT</div>
             <div class="hustle-bar-wrap">
               <div class="hustle-bar left bar-loser" style="width:47%"></div>
               <div class="hustle-bar right bar-opp-winner" style="width:53%"></div>
             </div>
           </div>
           <div style="text-align:left;min-width:38px;">
-            <div class="hustle-val opp-winner">13.8</div>
-            <div class="hustle-rank top5">#5</div>
+            <div class="hustle-val opp-winner">Top-2</div>
+            <div class="hustle-rank top5" style="background:rgba(0,122,193,0.12);color:var(--okc-blue)">#2</div>
           </div>
         </div>
 
-        <!-- Charges Drawn: PHX 0.8 (#9), GSW 0.7 (#15) — PHX wins -->
-        <!-- Bar widths: PHX = 0.8/(0.8+0.7)*100 = 53.3%, GSW = 46.7% -->
+        <!-- Screen Assists: PHX 8.9 (Top-5), OKC ~15th — PHX wins -->
+        <!-- Bar: PHX = 8.9/(8.9+6.5)*100 = 57.8%, OKC = 42.2% -->
         <div class="hustle-row">
           <div style="text-align:right;min-width:38px;">
-            <div class="hustle-val winner">0.8</div>
-            <div class="hustle-rank top10">#9</div>
+            <div class="hustle-val winner">8.9</div>
+            <div class="hustle-rank top5">#5</div>
           </div>
           <div class="hustle-cat">
-            <div class="hustle-cat-name">Charges Drawn</div>
+            <div class="hustle-cat-name">Screen Assists</div>
             <div class="hustle-bar-wrap">
-              <div class="hustle-bar left bar-winner" style="width:53%"></div>
-              <div class="hustle-bar right bar-loser" style="width:47%"></div>
+              <div class="hustle-bar left bar-winner" style="width:58%"></div>
+              <div class="hustle-bar right bar-loser" style="width:42%"></div>
             </div>
           </div>
           <div style="text-align:left;min-width:38px;">
-            <div class="hustle-val loser">0.7</div>
+            <div class="hustle-val loser">~Mid</div>
             <div class="hustle-rank mid">#15</div>
           </div>
         </div>
 
-        <div class="hustle-insight">
-          <strong>PHX dominates the hustle categories — but GSW wins at the point of attack on screens.</strong> The Suns rank in the top 10 in deflections, contested shots, loose balls, and charges drawn — a profile that creates turnovers and forces difficult looks. However, GSW's #5 screen assist rate is the system: Curry comes off screens generated by Draymond and Horford. The real matchup is PHX's elite shot-contesting (top-6 in contested shots, top-5 in contested 2PT) versus GSW's elite screen creation. If Phoenix can physically contest catch-and-shoot attempts without fouling, the hustle edge belongs to the Suns.
+        <!-- Charges Drawn: PHX 4.1 (Top-5), OKC 3.5 (Top-5) — PHX wins -->
+        <!-- Bar: PHX = 4.1/(4.1+3.5)*100 = 54.0%, OKC = 46.0% -->
+        <div class="hustle-row">
+          <div style="text-align:right;min-width:38px;">
+            <div class="hustle-val winner">4.1</div>
+            <div class="hustle-rank top5">#4</div>
+          </div>
+          <div class="hustle-cat">
+            <div class="hustle-cat-name">Charges Drawn</div>
+            <div class="hustle-bar-wrap">
+              <div class="hustle-bar left bar-winner" style="width:54%"></div>
+              <div class="hustle-bar right bar-loser" style="width:46%"></div>
+            </div>
+          </div>
+          <div style="text-align:left;min-width:38px;">
+            <div class="hustle-val loser">3.5</div>
+            <div class="hustle-rank top5">#5</div>
+          </div>
         </div>
 
-        <div class="section-note">Hustle stats approximate from NBA.com team hustle leaderboard. NBA ranks out of 30 teams, 2025-26 regular season.</div>
+        <div class="hustle-insight">
+          <strong>The most competitive hustle matchup in the playoffs.</strong> PHX is the only team in the NBA ranked top-5 in ALL hustle categories — but OKC leads the league in deflections (#1), loose balls (#2), and contested shots (#3). This is two elite defensive identities colliding. The difference isn't hustle volume — it's conversion: OKC turns their hustle into the NBA's best defense (107.7 DRTG), while PHX converts theirs into forced turnovers (3rd in opponent TO/G at 16.3). Watch Jordan Goodwin (6 steals in the play-in) vs. Cason Wallace (1.9 SPG, led NBA among guards). Whichever team wins the scramble possessions — tipped passes, loose balls, off-ball screens — will control the pace of this game.
+        </div>
+
+        <div class="section-note">Hustle stats from NBA.com team hustle leaderboard. NBA ranks out of 30 teams, 2025-26 regular season. Hustle MVP for PHX: Jordan Goodwin (Majerle Hustle Award). OKC counter: Cason Wallace (1.9 SPG).</div>
       </div>
     </div>
 
@@ -1389,32 +1355,37 @@ body {
       </div>
       <div class="accordion-body">
         <div class="series-record-banner">
-          <div class="series-record-text">GSW leads 3-1</div>
-          <div class="series-record-sub">PHX's only win was by 1 point (99-98 on Dec 18)</div>
+          <div class="series-record-text">OKC leads 3-2 regular season</div>
+          <div class="series-record-sub">Meaningful games: OKC 3-1 (Apr 12 was garbage time — both teams sat starters)</div>
         </div>
 
         <div class="series-row">
-          <div class="series-date">Nov 4, 2025</div>
-          <div class="series-score"><span class="l">PHX 107 @ GSW 118</span></div>
-          <div class="series-margin">GSW by 11</div>
+          <div class="series-date">Nov 28</div>
+          <div class="series-score"><span class="l">PHX 119 @ OKC 123</span></div>
+          <div class="series-margin">OKC by 4</div>
         </div>
         <div class="series-row">
-          <div class="series-date">Dec 18, 2025</div>
-          <div class="series-score"><span class="w">GSW 98 @ PHX 99</span></div>
-          <div class="series-margin">PHX by 1</div>
+          <div class="series-date">Dec 10</div>
+          <div class="series-score"><span class="l">PHX 89 @ OKC 138</span></div>
+          <div class="series-margin">OKC by 49</div>
         </div>
         <div class="series-row">
-          <div class="series-date">Dec 20, 2025</div>
-          <div class="series-score"><span class="l">PHX 116 @ GSW 119</span></div>
-          <div class="series-margin">GSW by 3</div>
+          <div class="series-date">Jan 4</div>
+          <div class="series-score"><span class="w">PHX 108 vs OKC 105</span></div>
+          <div class="series-margin">PHX by 3</div>
         </div>
         <div class="series-row">
-          <div class="series-date">Feb 5, 2026</div>
-          <div class="series-score"><span class="l">GSW 101 @ PHX 97</span></div>
-          <div class="series-margin">GSW by 4</div>
+          <div class="series-date">Feb 11</div>
+          <div class="series-score"><span class="l">OKC 136 @ PHX 109</span></div>
+          <div class="series-margin">OKC by 27</div>
+        </div>
+        <div class="series-row">
+          <div class="series-date">Apr 12</div>
+          <div class="series-score"><span class="w">PHX 135 @ OKC 103</span></div>
+          <div class="series-margin">PHX by 32 (starters sat)</div>
         </div>
 
-        <div class="section-note">Season series data verified via Ball Don't Lie API. Tonight is Game 5 — and the only one that matters. PHX is 1-1 at home vs GSW this season, with the lone win coming by a single possession.</div>
+        <div class="section-note">Key context: Green did NOT play in any of the 5 regular season games. Booker only played in 2. The Apr 12 game is meaningless — both teams rested all starters (Bouyea led PHX with 27 pts, OKC played only Dort). True series with starters: OKC 3-1. PHX's one meaningful win (Jan 4) was at home by 3 points.</div>
       </div>
     </div>
 
@@ -1430,84 +1401,84 @@ body {
       <div class="accordion-body">
 
         <div class="form-team-section">
-          <div class="form-team-header phx">Phoenix Suns — Last 5 (2-3)</div>
+          <div class="form-team-header phx">Phoenix Suns — Last 5 (3-2)</div>
+          <div class="form-row">
+            <div class="form-badge W">W</div>
+            <div class="form-game">
+              <div class="form-score">PHX 111 vs GSW 96 <span class="form-playin-flag">PLAY-IN WIN</span></div>
+              <div class="form-note">Apr 17 · Green 36 pts (14-20 FG, 8-14 3PT). Goodwin 19 pts, 9 reb, 6 steals. Dominant play-in performance. PHX advances as #8 seed.</div>
+            </div>
+          </div>
           <div class="form-row">
             <div class="form-badge L">L</div>
             <div class="form-game">
-              <div class="form-score">POR 114 @ PHX 110 <span class="form-playin-flag">PLAY-IN</span></div>
-              <div class="form-note">Apr 14 · Avdija 41 pts — go-ahead 3-point play at 16.1 sec. Booker had 5 fouls. Jalen Green's tying 3 rimmed out. Blew 11-pt 4Q lead.</div>
+              <div class="form-score">POR 114 @ PHX 110 <span class="form-playin-flag">PLAY-IN L</span></div>
+              <div class="form-note">Apr 14 · Avdija 41 pts. PHX blew 11-pt 4Q lead. Forced into elimination bracket — then bounced back emphatically on Friday.</div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-badge W">W</div>
             <div class="form-game">
               <div class="form-score">PHX 135 @ OKC 103</div>
-              <div class="form-note">Apr 12 · Dominant blowout road win at the 1-seed — best result of the final stretch.</div>
+              <div class="form-note">Apr 12 · Both teams rested starters. Meaningless for series purposes but PHX won the box score.</div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-badge L">L</div>
             <div class="form-game">
               <div class="form-score">PHX 73 @ LAL 101</div>
-              <div class="form-note">Apr 10 · Booker sat (rest). Non-competitive — roster management for the stretch run.</div>
+              <div class="form-note">Apr 10 · Booker sat (rest). Non-competitive — roster management.</div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-badge W">W</div>
             <div class="form-game">
               <div class="form-score">DAL 107 @ PHX 112</div>
-              <div class="form-note">Apr 8 · Home win, took care of business vs Dallas.</div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-badge L">L</div>
-            <div class="form-game">
-              <div class="form-score">HOU 119 @ PHX 105</div>
-              <div class="form-note">Apr 7 · Houston controlled throughout. PHX defensive lapses.</div>
+              <div class="form-note">Apr 8 · Solid home win, took care of business vs Dallas.</div>
             </div>
           </div>
         </div>
 
         <div class="form-team-section">
-          <div class="form-team-header opp">Golden State Warriors — Last 5 (2-3)</div>
+          <div class="form-team-header opp">Oklahoma City Thunder — Last 5 (3-2)</div>
           <div class="form-row">
-            <div class="form-badge W">W</div>
+            <div class="form-badge L">L</div>
             <div class="form-game">
-              <div class="form-score">GSW 126 @ LAC 121 <span class="form-playin-flag">PLAY-IN</span></div>
-              <div class="form-note">Apr 15 · Curry 35 pts in 36 min. Porzingis 20/5/5. Overcame 13-pt 4Q deficit.</div>
+              <div class="form-score">PHX 135 @ OKC 103</div>
+              <div class="form-note">Apr 12 · Rested starters — meaningless. OKC hasn't played a meaningful game in 7 days. Rust is a real factor.</div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-badge L">L</div>
             <div class="form-game">
-              <div class="form-score">GSW 110 @ LAC 115</div>
-              <div class="form-note">Apr 12 · Loss to Clippers in final regular season tuneup.</div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-badge L">L</div>
-            <div class="form-game">
-              <div class="form-score">GSW 118 @ SAC 124</div>
-              <div class="form-note">Apr 10 · Road loss in Sacramento to close the regular season.</div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-badge L">L</div>
-            <div class="form-game">
-              <div class="form-score">LAL 119 @ GSW 103</div>
-              <div class="form-note">Apr 9 · Home blowout loss vs Lakers.</div>
+              <div class="form-score">OKC 107 @ DEN 127</div>
+              <div class="form-note">Apr 10 · Road loss in Denver to close the regular season stretch.</div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-badge W">W</div>
             <div class="form-game">
-              <div class="form-score">SAC 105 @ GSW 110</div>
-              <div class="form-note">Apr 7 · Home win vs Sacramento — one of their few bright spots late.</div>
+              <div class="form-score">OKC 128 @ LAC 110</div>
+              <div class="form-note">Apr 8 · Road win at Clippers. Convincing performance.</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-badge W">W</div>
+            <div class="form-game">
+              <div class="form-score">OKC 123 @ LAL 87</div>
+              <div class="form-note">Apr 7 · Dominant road win at LA — SGA was excellent.</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-badge W">W</div>
+            <div class="form-game">
+              <div class="form-score">OKC 146 vs UTA 111</div>
+              <div class="form-note">Apr 5 · Home blowout vs Utah — typical OKC dominant home performance.</div>
             </div>
           </div>
         </div>
 
-        <div class="section-note">Game results verified via Ball Don't Lie API. PHX went 2-3 in final 5, with the Play-In loss to POR the most consequential. GSW won their Play-In vs LAC on Wednesday — arriving tonight with 2 days' rest.</div>
+        <div class="section-note">Game results from Ball Don't Lie API. PHX went 3-2 in final 5, ending on a dominant play-in win. OKC has had 7 full days without a meaningful game — momentum and rhythm belong entirely to Phoenix entering today.</div>
       </div>
     </div>
 
@@ -1524,38 +1495,57 @@ body {
         <div class="betting-card">
           <div class="bet-row">
             <span class="bet-label">Spread</span>
-            <span class="bet-value">PHX -3.5</span>
+            <span class="bet-value">OKC -14 to -14.5 (most books -14.5)</span>
           </div>
           <div class="bet-row">
             <span class="bet-label">Over/Under</span>
-            <span class="bet-value">219.5</span>
+            <span class="bet-value">215.5</span>
           </div>
           <div class="bet-row">
-            <span class="bet-label">Moneyline</span>
-            <span class="bet-value">PHX -145 · GSW +130</span>
+            <span class="bet-label">Moneyline (PHX)</span>
+            <span class="bet-value">PHX +696 (FanDuel)</span>
           </div>
           <div class="bet-row">
-            <span class="bet-label">ESPN Win Probability</span>
-            <span class="bet-value">PHX 64.8%</span>
+            <span class="bet-label">Moneyline (OKC)</span>
+            <span class="bet-value">OKC -1099 (FanDuel)</span>
           </div>
           <div class="bet-row">
-            <span class="bet-label">numberFire Prediction</span>
-            <span class="bet-value">PHX 64.6%</span>
+            <span class="bet-label">SportsLine Model</span>
+            <span class="bet-value">OKC 114, PHX 101 — leans Under</span>
+          </div>
+        </div>
+
+        <div class="betting-card">
+          <div class="bet-row">
+            <span class="bet-label">Series Line (OKC)</span>
+            <span class="bet-value">OKC -3000 (to win series)</span>
+          </div>
+          <div class="bet-row">
+            <span class="bet-label">Series Line (PHX)</span>
+            <span class="bet-value">PHX +1300 (to win series)</span>
+          </div>
+          <div class="bet-row">
+            <span class="bet-label">Series Spread</span>
+            <span class="bet-value">OKC -2.5 games (-300)</span>
+          </div>
+          <div class="bet-row">
+            <span class="bet-label">Total Games</span>
+            <span class="bet-value">Under 5.5 (-320)</span>
           </div>
         </div>
 
         <div class="win-prob-row">
-          <div class="win-prob-label">Win Probability Consensus</div>
+          <div class="win-prob-label">Win Probability — Game 1</div>
           <div class="win-prob-bar">
-            <div class="win-prob-fill" style="width:64.8%"></div>
+            <div class="win-prob-fill" style="width:25%"></div>
           </div>
           <div class="win-prob-vals">
-            <span class="win-prob-val phx">PHX 64.8%</span>
-            <span class="win-prob-val opp">GSW 35.2%</span>
+            <span class="win-prob-val phx">PHX ~25%</span>
+            <span class="win-prob-val opp">OKC ~75%</span>
           </div>
         </div>
 
-        <div class="section-note">Market context: PHX is a moderate favorite despite being 3-1 on the wrong end of the season series. The spread reflects home court advantage and PHX's deeper roster. Elimination game totals historically trend slightly under due to heightened defensive intensity. Porzingis availability will likely move the line — monitor for late injury updates.</div>
+        <div class="section-note">This is the largest first-round spread of the 2026 playoffs. The market expects a Thunder sweep or quick 5-game series. PHX is the most extreme underdog in Round 1. Historical note: heavy 1-seed favorites have covered in Game 1 about 58% of the time — the rest factor works in PHX's favor for a cover, even if a win is unlikely.</div>
       </div>
     </div>
 
@@ -1571,33 +1561,33 @@ body {
       <div class="accordion-body">
 
         <div class="media-item">
-          <div class="media-headline">Redemption or Elimination — PHX's Tuesday Night Haunts the Locker Room</div>
-          <div class="media-body">Avdija's 41-point outburst and the go-ahead 3-point play with 16.1 seconds left is the only thing Suns media is talking about. Booker's 5-foul night, Jalen Green's missed buzzer 3, the evaporated 11-point lead — all of it created a deflating 48 hours that now ends in tonight's do-or-die. The narrative writes itself: channel the pain, protect home court, advance.</div>
+          <div class="media-headline">OKC Hunting Back-to-Back Championships — First Repeat Since 2018 Warriors</div>
+          <div class="media-body">The Thunder enter as defending champions with the best record in the NBA (64-18), the best defense (107.7 DRTG, #1), and overwhelming public confidence. SI and Inside The Thunder have chronicled an organization that has never been more cohesive. The narrative pressure on OKC is winning — this team is expected to repeat. A Game 1 loss today would crack that expectation immediately.</div>
         </div>
 
         <div class="media-item">
-          <div class="media-headline">Curry Reminder — Postseason Mode Is Different</div>
-          <div class="media-body">Wednesday's 35-point comeback cemented what anyone who has watched the Warriors knows: Steph Curry in postseason basketball is a different organism. National media is framing tonight as "Can the Suns keep Curry under control at home?" — a question that has no clean answer. PHX's T-1st 3P defense is the best weapon Jordan Ott has against him.</div>
+          <div class="media-headline">Jalen Green: OKC's Unknown Variable — "They Have Zero Film on Him"</div>
+          <div class="media-body">Yahoo Sports highlighted the extraordinary situation: Green scored 36 points in the play-in but did not appear in any of the 5 regular-season games against OKC. The Thunder's scouting staff has prepared for a different version of this team. PHX's coaches believe the element of surprise is real. Cason Wallace has held Green to 6 points per 75 possessions historically — but that was a regular-season, limited-minutes matchup. This Green is operating at a different level.</div>
         </div>
 
         <div class="media-item">
-          <div class="media-headline">Porzingis Ankle Watch — The Storyline That Moves Lines</div>
-          <div class="media-body">Local beat writers noted Porzingis visibly limping in the postgame corridor after Wednesday's win. His 20/5/5 performance was critical to the GSW comeback — if he's limited or out, the Warriors lose their second-best scorer and rim presence. The Suns have an obvious structural advantage if they catch a break here.</div>
+          <div class="media-headline">The Brooks-SGA Canadian Rivalry — Personal Stakes on Both Sides</div>
+          <div class="media-body">Both Dillon Brooks and Shai Gilgeous-Alexander are Canadian. Brooks has publicly claimed to be the better player. The Yahoo Sports series preview has leaned into this narrative hard — and there's real competitive juice here beyond trash talk. Brooks will be tasked with primary SGA defense, a role he relishes. Watch the first play Brooks makes against SGA for the tone this sets.</div>
         </div>
 
         <div class="media-item">
-          <div class="media-headline">GSW Owns the Season Series — But Playoff Basketball Is Different</div>
-          <div class="media-body">The Warriors have beaten Phoenix 3 times in 4 meetings this season. That fact has dominated the "can PHX actually win this?" discourse. PHX's counterpoint: home court, a healthy (if questionable) roster, and Booker with something to prove after foul trouble Tuesday. The Suns beat GSW 99-98 at Mortgage Matchup Center in December — they know how to win this game.</div>
+          <div class="media-headline">First Playoff Meeting Since 1997 — SuperSonics Era History</div>
+          <div class="media-body">These franchises haven't met in the postseason since the Gary Payton / Shawn Kemp SuperSonics era — a 29-year gap. For a franchise that has been through multiple identities, today marks a return to playoff relevance after the KD/Beal era ended. This is a new Suns team facing a new Thunder team, with none of the baggage of the previous decade.</div>
         </div>
 
         <div class="media-item">
-          <div class="media-headline">Draymond Green as the X-Factor</div>
-          <div class="media-body">Beyond his 8.4 PPG, Draymond Green's impact is in playmaking leverage, drawing Booker into foul situations, and orchestrating GSW's half-court defense. Beat writers covering the Warriors emphasize that how Draymond's presence affects Booker's aggression early in the game will shape everything that follows.</div>
+          <div class="media-headline">"Phoenix's Impossible Rebuild" — The Analytics Behind a 45-Win Underdog</div>
+          <div class="media-body">NBA.com profiled the Suns as the most remarkable rebuild story: after trading KD and releasing Beal, 7 players set career highs, PHX forced the 3rd-most turnovers in the NBA, and their shot-opportunity differential improved by +7.4 (the biggest improvement in the league). Jordan Ott is the rookie coach who built this defensive identity — and today is his first-ever playoff game. The expert consensus (The Athletic, NBA.com, Yahoo) is Thunder in 4-5, but nobody is calling this a walkover.</div>
         </div>
 
         <div class="media-item">
-          <div class="media-headline">Amazon Prime Video — Historic Streaming-Only Postseason Broadcast</div>
-          <div class="media-body">Tonight's Play-In elimination game airs exclusively on Amazon Prime Video — no traditional cable or broadcast TV option. This is a notable distribution moment for postseason basketball and the highest-stakes Amazon Prime NBA broadcast of the season.</div>
+          <div class="media-headline">Player Quotes: "We're Fresh. Their Legs Are Sitting"</div>
+          <div class="media-body">Goodwin: <em>"We in rhythm, we just played. So that's how I'm looking at it. We fresh right now. Our adrenaline still going to be rolling. They've been sitting out a week."</em> Green: <em>"They're a team that has been together for some time, so they got chemistry there. Obviously, they're the champs... But I think if we bring the same energy we brought tonight, getting stops, playing defense, getting out in running, we can use that to our advantage."</em></div>
         </div>
 
       </div>
@@ -1616,32 +1606,32 @@ body {
 
         <div class="watch-item">
           <div class="watch-num">1.</div>
-          <div class="watch-text"><strong>Booker's foul count in Q1-Q3.</strong> Tuesday's collapse started with Booker picking up fouls early and having to play cautiously. If he has 3+ fouls before halftime tonight, Jordan Ott faces an impossible roster management decision in an elimination game. Watch his body language in defensive rotations — is he playing loose and aggressive, or timid and foul-aware?</div>
+          <div class="watch-text"><strong>Can Green sustain his play-in explosion against a different level of defense?</strong> His 36-point play-in game was stunning, but OKC's defense is a different planet from Golden State. Cason Wallace has historically held him to 6 points per 75 possessions. If Green gets going in the first quarter — if his first two or three shots fall — the entire series narrative shifts. Watch his first five possessions: is he attacking downhill, or is OKC's length already affecting his shot selection?</div>
         </div>
 
         <div class="watch-item">
           <div class="watch-num">2.</div>
-          <div class="watch-text"><strong>Porzingis's mobility and first-quarter movement.</strong> His right ankle is the single biggest wildcard in tonight's game. Watch him in the opening minutes — is he cutting hard, jumping off two feet on blocks, and pushing in transition? Or is he favoring it, setting up in the post, and avoiding rotation sprints? That answer will tell you more than any pregame report.</div>
+          <div class="watch-text"><strong>Booker vs. the Dort/Wallace rotation — creating vs. controlling.</strong> OKC will rotate multiple elite defenders at Booker throughout the game. Watch how he handles the physicality: does he create for Green and Brooks when his own shot isn't falling, or does he force it? His willingness to make the right pass in possession-basketball situations, not just score, will define PHX's offensive ceiling when SGA is neutralizing him.</div>
         </div>
 
         <div class="watch-item">
           <div class="watch-num">3.</div>
-          <div class="watch-text"><strong>Curry's minute management and shot selection.</strong> If GSW is managing his ankle load, he may come in waves — big stretches on, then rest. When Curry is off the floor, Phoenix needs to build leads. When he's on, they need to contain without fouling. Watch which PHX defender draws the Curry assignment and whether they can stay in front on screen navigation.</div>
+          <div class="watch-text"><strong>Allen and Williams game-time decisions reshape the game plan.</strong> If both are out, the Suns shorten their rotation dramatically and Ighodaro starts at center vs. Holmgren — a massive mismatch. Watch the pregame warmup lines: if Allen is loosening up actively and Williams is in his usual stretch routine, that's a good sign. If either is absent or cautious, adjust your expectations for depth contributions accordingly.</div>
         </div>
 
         <div class="watch-item">
           <div class="watch-num">4.</div>
-          <div class="watch-text"><strong>Mortgage Matchup Center crowd energy as a sixth player.</strong> PHX is 25-16 at home. The crowd has carried this team in close games. Watch how the arena responds to big Jalen Green plays — if he redeems Tuesday's miss with a big moment early, the building could swing the emotional momentum of the entire night. Home crowd effect is real in elimination games.</div>
+          <div class="watch-text"><strong>OKC's first-quarter rhythm — rust is a real factor.</strong> Seven full days without a game. Home teams with 5+ days rest in Round 1 have historically started slow. Watch OKC's first 3 possessions: are SGA and Holmgren moving fluidly, pushing pace, operating at full speed? Or are they half a beat slow — feeling out the game, letting Phoenix settle? PHX needs a fast start to win the first-quarter battle before OKC's legs wake up.</div>
         </div>
 
         <div class="watch-item">
           <div class="watch-num">5.</div>
-          <div class="watch-text"><strong>Hustle identity — can PHX's defensive disruption neutralize GSW's screen system?</strong> The Suns rank top-6 in contested shots and top-5 in contested 2PT defense. The Warriors rank #5 in screen assists. The matchup between PHX's shot-contesting and GSW's screen creation is the most important tactical battle of the night. Watch whether PHX is getting hands in passing lanes (14.2 deflections/game, #8) and whether they're closing out cleanly on Curry catch-and-shoot attempts. Their T-1st 3P defense has to show up in the moments that matter.</div>
+          <div class="watch-text"><strong>Hustle identity under elite pressure — can PHX maintain chaos against OKC's ball-handlers?</strong> The Suns are top-5 in every hustle category. But OKC leads the NBA in deflections (#1) and loose balls (#2). This is the first time PHX's hustle identity faces an equal. Watch Goodwin specifically — his 6 steals in the play-in came from instinct and positioning. Does that carry over against SGA's elite ball-handling and Holmgren's passing from the elbow? Tipped passes, loose balls, and scramble possessions will determine whether this is "competitive" or "blowout."</div>
         </div>
 
         <div class="watch-item">
           <div class="watch-num">6.</div>
-          <div class="watch-text"><strong>Bench depth impact — Allen and Williams availability.</strong> If both Grayson Allen and Mark Williams are active, the Suns have meaningful depth. If both are out, Jordan Ott is managing a tighter rotation in a high-pressure game. Watch Oso Ighodaro's rebounding and Royce O'Neale's spacing as the unsung contributors who could swing the game's margins. The winner tonight will likely be decided in the moments between star plays.</div>
+          <div class="watch-text"><strong>Jordan Ott's tactical adjustments — the rookie coach's first playoff game.</strong> His defensive schemes (forcing 16.3 TO/game, 3rd-most in NBA) earned Phoenix this spot. The question is whether his scheme holds up against SGA and Holmgren — two players who exploit both the perimeter and the paint simultaneously. Watch for halftime adjustments specifically: does PHX's scheme bend after the first 24 minutes, or does Ott make the correct counter-punch? His coaching in this series is as much on trial as anyone's playing.</div>
         </div>
 
       </div>
@@ -1658,33 +1648,48 @@ body {
       </div>
       <div class="accordion-body">
 
-        <div style="background:rgba(232,96,30,0.08);border:1px solid rgba(232,96,30,0.2);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:12px;">
-          <div style="font-size:11px;font-weight:700;color:var(--suns-orange);margin-bottom:4px;">IF PHX WINS TONIGHT</div>
-          <div style="font-size:11px;color:var(--text-muted);line-height:1.55;">Suns earn the #8 seed and open the NBA Playoffs on Saturday, April 18. Round 1 opponent: <strong style="color:var(--text);">Oklahoma City Thunder (1st seed)</strong>. Series format: best-of-7. Home court advantage belongs to OKC for the series.</div>
-        </div>
-
-        <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:12px;">
-          <div style="font-size:11px;font-weight:700;color:var(--loss);margin-bottom:4px;">IF PHX LOSES TONIGHT</div>
-          <div style="font-size:11px;color:var(--text-muted);line-height:1.55;">Season ends. 2025-26 is over. GSW advances as the 8-seed and faces OKC in Round 1.</div>
+        <div style="background:rgba(0,122,193,0.08);border:1px solid rgba(0,122,193,0.2);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:12px;">
+          <div style="font-size:11px;font-weight:700;color:#4ab3f4;margin-bottom:4px;">ROUND 1 — PHX vs OKC (Best of 7)</div>
+          <div style="font-size:11px;color:var(--text-muted);line-height:1.55;">OKC holds home-court advantage. Games 1, 2, 5, 7 at Paycom Center. Games 3, 4, 6 at Mortgage Matchup Center. PHX needs 4 wins to advance to the second round.</div>
         </div>
 
         <div class="schedule-row">
-          <div class="sched-date">Sat, Apr 18</div>
-          <div class="sched-opp round1-game">vs OKC Thunder (IF WIN)</div>
-          <div class="sched-loc">Round 1 — Game 1</div>
+          <div class="sched-date">Sun, Apr 19</div>
+          <div class="sched-opp current-game">@ OKC Thunder — TODAY</div>
+          <div class="sched-loc">G1 · 3:30 ET · ABC</div>
         </div>
         <div class="schedule-row">
-          <div class="sched-date">Mon, Apr 20</div>
-          <div class="sched-opp round1-game">vs OKC Thunder (IF WIN)</div>
-          <div class="sched-loc">Round 1 — Game 2</div>
+          <div class="sched-date">Wed, Apr 22</div>
+          <div class="sched-opp">@ OKC Thunder</div>
+          <div class="sched-loc">G2 · 9:30 ET · ESPN</div>
         </div>
         <div class="schedule-row">
-          <div class="sched-date">Thu, Apr 23</div>
-          <div class="sched-opp round1-game">@ OKC Thunder (IF WIN)</div>
-          <div class="sched-loc">Round 1 — Game 3</div>
+          <div class="sched-date">Sat, Apr 25</div>
+          <div class="sched-opp">vs OKC Thunder</div>
+          <div class="sched-loc">G3 · 3:30 ET · NBC</div>
+        </div>
+        <div class="schedule-row">
+          <div class="sched-date">Mon, Apr 27</div>
+          <div class="sched-opp">vs OKC Thunder</div>
+          <div class="sched-loc">G4 · TBD</div>
+        </div>
+        <div class="schedule-row">
+          <div class="sched-date">Wed, Apr 29*</div>
+          <div class="sched-opp">@ OKC Thunder*</div>
+          <div class="sched-loc">G5 · If necessary</div>
+        </div>
+        <div class="schedule-row">
+          <div class="sched-date">Fri, May 1*</div>
+          <div class="sched-opp">vs OKC Thunder*</div>
+          <div class="sched-loc">G6 · If necessary</div>
+        </div>
+        <div class="schedule-row">
+          <div class="sched-date">Sun, May 3*</div>
+          <div class="sched-opp">@ OKC Thunder*</div>
+          <div class="sched-loc">G7 · If necessary</div>
         </div>
 
-        <div class="section-note">Playoff schedule tentative — NBA releases official Round 1 schedule after Play-In concludes. All games subject to broadcast scheduling adjustments. Specific times TBD by NBA/ABC/ESPN.</div>
+        <div class="section-note">* = if necessary. Games 5-7 times TBD by NBA scheduling. Round 2 begins approximately May 6-8 for series that conclude in 4-5 games.</div>
       </div>
     </div>
 
@@ -1705,8 +1710,8 @@ body {
         <text x="94" y="53" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="7.8" fill="rgba(255,255,255,0.25)" letter-spacing="2.4">ACCELERATED VELOCITY CONSULTING</text>
       </svg>
     </div>
-    <div class="footer-goodluck">Good luck tonight, Mat</div>
-    <div class="footer-timestamp">Generated April 17, 2026 — 4:30 PM PST</div>
+    <div class="footer-goodluck">Good luck today, Mat</div>
+    <div class="footer-timestamp">Generated April 19, 2026 — 9:15 AM MST</div>
   </div>
 
 </div><!-- end .container -->
@@ -1747,9 +1752,9 @@ document.getElementById('top-header').addEventListener('click', function() {
 
 // Edge pin insights
 const pinInsights = [
-  "PHX is 25-16 at home — Mortgage Matchup Center is a fortress. GSW is 15-26 on the road, worst in the Play-In field.",
-  "Curry dropped 35 Wednesday — but PHX holds opponents to T-1st 3P defense. The contest is what matters, not the name.",
-  "Booker's foul discipline is the #1 tactical variable tonight. 5 fouls killed PHX Tuesday vs Portland."
+  "OKC's 3PT defense ranks 25th — PHX set a franchise record with 1,210 threes this season. The math is there.",
+  "Green didn't play OKC once in the regular season. The Thunder have no film on him at this level. That's a real edge.",
+  "OKC hasn't played in 7 days. PHX played Friday and is in rhythm. Momentum vs. rest — watch the 1st quarter."
 ];
 
 let activePinIdx = 0;
@@ -1775,7 +1780,7 @@ function pinClick(idx) {
 }
 
 // Countdown to tipoff
-const tipoff = new Date('2026-04-18T02:00:00Z'); // 10 PM ET = 2:00 AM UTC next day
+const tipoff = new Date('2026-04-19T19:30:00Z'); // 3:30 PM ET = 19:30 UTC
 
 function updateCountdown() {
   const now = new Date();
